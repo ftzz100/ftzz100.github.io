@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.css' rel='stylesheet'/>
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/default-skin/default-skin.min.css' rel='stylesheet'/>
+    <script src='https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ftzz100.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":250,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="&amp;#x2003;&amp;#x2003;&amp;#x5728;&amp;#x672C;&amp;#x5730;Hexo&amp;#x535A;&amp;#x5BA2;&amp;#x5199;&amp;#x597D;&amp;#x4E86;&amp;#x4E00;&amp;#x4E9B;&amp;#x6587;&amp;#x7AE0;&amp;#xFF0C;&amp;#x5C31;&amp;#x60F3;&amp;#x4E0A;&amp;#x4F20;&amp;#x5230;GitHub&amp;#x4E0A;&amp;#x4E86;&amp;#x3002;&amp;#x800">
+<meta name="keywords" content="hexo,error">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo部署到GitHub的问题">
+<meta property="og:url" content="https://ftzz100.github.io/hexo-deploy-trouble/index.html">
+<meta property="og:site_name" content="Freemon">
+<meta property="og:description" content="&amp;#x2003;&amp;#x2003;&amp;#x5728;&amp;#x672C;&amp;#x5730;Hexo&amp;#x535A;&amp;#x5BA2;&amp;#x5199;&amp;#x597D;&amp;#x4E86;&amp;#x4E00;&amp;#x4E9B;&amp;#x6587;&amp;#x7AE0;&amp;#xFF0C;&amp;#x5C31;&amp;#x60F3;&amp;#x4E0A;&amp;#x4F20;&amp;#x5230;GitHub&amp;#x4E0A;&amp;#x4E86;&amp;#x3002;&amp;#x800">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-05-24T01:51:19.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo部署到GitHub的问题">
+<meta name="twitter:description" content="&amp;#x2003;&amp;#x2003;&amp;#x5728;&amp;#x672C;&amp;#x5730;Hexo&amp;#x535A;&amp;#x5BA2;&amp;#x5199;&amp;#x597D;&amp;#x4E86;&amp;#x4E00;&amp;#x4E9B;&amp;#x6587;&amp;#x7AE0;&amp;#xFF0C;&amp;#x5C31;&amp;#x60F3;&amp;#x4E0A;&amp;#x4F20;&amp;#x5230;GitHub&amp;#x4E0A;&amp;#x4E86;&amp;#x3002;&amp;#x800">
+
+<link rel="canonical" href="https://ftzz100.github.io/hexo-deploy-trouble/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hexo部署到GitHub的问题 | Freemon</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167084562-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167084562-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Freemon</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-reading">
+
+    <a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>Reading</a>
+
+  </li>
+        <li class="menu-item menu-item-friends">
+
+    <a href="/friends" rel="section"><i class="fa fa-link fa-fw"></i>Friends</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ftzz100.github.io/hexo-deploy-trouble/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ftzz100">
+      <meta itemprop="description" content="爱多一次，醉多一次">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemon">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo部署到GitHub的问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-18 23:03:27" itemprop="dateCreated datePublished" datetime="2020-05-18T23:03:27+08:00">2020-05-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x2003;&#x2003;&#x5728;&#x672C;&#x5730;Hexo&#x535A;&#x5BA2;&#x5199;&#x597D;&#x4E86;&#x4E00;&#x4E9B;&#x6587;&#x7AE0;&#xFF0C;&#x5C31;&#x60F3;&#x4E0A;&#x4F20;&#x5230;GitHub&#x4E0A;&#x4E86;&#x3002;&#x800C;&#x90E8;&#x7F72;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7528;<code>hexo d</code>&#x4E0D;&#x5C31;&#x5B8C;&#x4E8B;&#x4E86;&#x5417;&#xFF1F;&#x662F;&#x554A;&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x3002;&#x4E0D;&#x8FC7;&#x672C;&#x6B21;&#x9694;&#x6709;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x6CA1;&#x90E8;&#x7F72;&#x4E86;&#xFF0C;&#x51FA;&#x73B0;&#x4E9B;&#x72B6;&#x51B5;&#xFF0C;&#x804A;&#x4EE5;&#x8BB0;&#x4E4B;&#x3002;</p>
+<a id="more"></a>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo d</span><br><span class="line">Usage: hexo &lt;command&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>&#x770B;&#x5230;&#x547D;&#x4EE4;&#x6CA1;&#x8D77;&#x4F5C;&#x7528;&#x4E00;&#x6123;&#x4E00;&#x6123;&#x7684;&#xFF0C;hexo&#x662F;&#x4E0D;&#x662F;&#x53C8;&#x95F9;&#x813E;&#x6C14;&#x4E86;&#xFF0C;&#x4E00;&#x5929;&#x5929;&#x7684;&#x3002;&#x540E;&#x6765;&#x624D;&#x60F3;&#x8D77;&#x5F88;&#x4E45;&#x524D;&#x5B89;&#x88C5;&#x8FC7;<code>hexo-douban</code>&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#xFF0C;&#x4E0E;<code>hexo deploy</code>&#x7684;&#x7B80;&#x5199;&#x90FD;&#x662F;<code>hexo d</code>&#xFF0C;&#x51B2;&#x7A81;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x4E24;&#x8005;&#x5171;&#x5B58;&#x65F6;&#x4E0D;&#x80FD;&#x7528;&#x7B80;&#x5199;&#x4E86;&#x3002;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo deploy </span><br><span class="line"></span><br><span class="line">&#x679A;&#x4E3E;&#x5BF9;&#x8C61;: 190, &#x5B8C;&#x6210;.</span><br><span class="line">&#x5BF9;&#x8C61;&#x8BA1;&#x6570;&#x4E2D;: 100% (190/190), &#x5B8C;&#x6210;.</span><br><span class="line">&#x4F7F;&#x7528; 4 &#x4E2A;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x538B;&#x7F29;</span><br><span class="line">&#x538B;&#x7F29;&#x5BF9;&#x8C61;&#x4E2D;: 100% (154/154), &#x5B8C;&#x6210;.</span><br><span class="line">&#x5199;&#x5165;&#x5BF9;&#x8C61;&#x4E2D;: 30% (50/182)...</span><br></pre></td></tr></table></figure>
+
+<p>&#x4E0D;&#x7528;&#x7F29;&#x5199;&#x5C31;&#x53EF;&#x4EE5;&#x90E8;&#x7F72;&#x4E86;&#xFF0C;&#x53EF;&#x662F;&#x90E8;&#x7F72;&#x8FC7;&#x7A0B;&#x5361;&#x4F4F;&#x4E86;&#x3002;&#x53EF;&#x80FD;&#x5F97;&#x5B9E;&#x4E8B;&#x6C42;&#x662F;&#x7F51;&#x4E0A;&#x51B2;&#x6D6A;&#x5427;&#xFF0C;&#x5C31;&#x5F00;&#x4E86;proxy&#x4EE3;&#x7406;&#xFF0C;&#x679C;&#x7136;&#x6709;&#x70B9;&#x901F;&#x5EA6;&#x4E86;&#xFF0C;&#x8FDB;&#x5EA6;&#x5FEB;&#x8FDB;&#x4E86;&#x4E00;&#x4E9B;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E00;&#x4F1A;&#x513F;&#x540E;&#x8FD8;&#x662F;&#x62A5;&#x9519;</p>
+<p><code>fatal: &#x8FDC;&#x7AEF;&#x610F;&#x5916;&#x6302;&#x65AD;&#x4E86;</code></p>
+<p>&#x597D;&#x5427;&#xFF0C;&#x67E5;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x9879;&#x76EE;&#x592A;&#x4E45;&#x6CA1;&#x6709;&#x90E8;&#x7F72;&#xFF0C;&#x672C;&#x5730;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x8FC7;&#x5927;&#xFF0C;&#x800C;Buffer&#x592A;&#x5C0F;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --global http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
+
+<p>&#x7136;&#x540E;&#x679C;&#x7136;&#x5C31;100%&#x5199;&#x5165;&#x5BF9;&#x8C61;&#x4E86;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x4E0D;&#x6210;&#x529F;&#xFF1A;</p>
+<p><code>error: RPC &#x5931;&#x8D25;&#x3002;curl 56 LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 54</code></p>
+<p>&#x5728;&#x4E00;&#x4E2A;<a href="https://github.com/EOSIO/eos/issues/4536" rel="noopener external nofollow noreferrer" target="_blank">issue</a>&#x91CC;&#x627E;&#x5230;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<blockquote>
+<p>this issue is most likely related to your git/ curl/ libressl or the proxy behind your internet. Try to update your git/curl/ libressl or try to connect without using proxy.</p>
+</blockquote>
+<p>&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x62A5;&#x9519;&#x901A;&#x5E38;&#x662F;&#x5F00;&#x4E86;&#x4EE3;&#x7406;&#x9020;&#x6210;&#x7684;&#xFF0C;&#x771F;&#x662F;&#x753B;&#x86C7;&#x6DFB;&#x8DB3;&#x554A;&#xFF01;&#x5C06;proxy&#x5173;&#x4E86;&#x5C31;&#x6CA1;&#x6709;&#x62A5;&#x9519;&#x4E86;&#xFF0C;&#x4E0D;&#x8FC7;&#x7EE7;&#x7EED;&#x5361;&#x4F4F;&#xFF0C;&#x5F88;&#x4E45;&#x90FD;&#x4E0D;&#x52A8;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x5199;&#x5165;&#x5BF9;&#x8C61;&#x4E2D;: 100% (182/182), 17.47 MiB | 20.30 MiB/s, &#x5B8C;&#x6210;.</span><br><span class="line">&#x603B;&#x5171; 182 &#xFF08;&#x5DEE;&#x5F02; 33&#xFF09;&#xFF0C;&#x590D;&#x7528; 0 &#xFF08;&#x5DEE;&#x5F02; 0&#xFF09;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>&#x65E0;&#x5948;&#x4E4B;&#x4E0B;&#x5F00;&#x4E86;&#x624B;&#x673A;&#x70ED;&#x70B9;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x4F4D;&#x4E8E;&#x5206;&#x652F; master</span><br><span class="line">&#x65E0;&#x6587;&#x4EF6;&#x8981;&#x63D0;&#x4EA4;&#xFF0C;&#x5E72;&#x51C0;&#x7684;&#x5DE5;&#x4F5C;&#x533A;</span><br><span class="line">&#x679A;&#x4E3E;&#x5BF9;&#x8C61;: 190, &#x5B8C;&#x6210;.</span><br><span class="line">&#x5BF9;&#x8C61;&#x8BA1;&#x6570;&#x4E2D;: 100% (190/190), &#x5B8C;&#x6210;.</span><br><span class="line">&#x4F7F;&#x7528; 4 &#x4E2A;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x538B;&#x7F29;</span><br><span class="line">&#x538B;&#x7F29;&#x5BF9;&#x8C61;&#x4E2D;: 100% (154/154), &#x5B8C;&#x6210;.</span><br><span class="line">&#x5199;&#x5165;&#x5BF9;&#x8C61;&#x4E2D;: 100% (182/182), 17.47 MiB | 14.45 MiB/s, &#x5B8C;&#x6210;.</span><br><span class="line">&#x603B;&#x5171; 182 &#xFF08;&#x5DEE;&#x5F02; 33&#xFF09;&#xFF0C;&#x590D;&#x7528; 0 &#xFF08;&#x5DEE;&#x5F02; 0&#xFF09;</span><br><span class="line">remote: Resolving deltas: 100% (33/33), done.</span><br><span class="line">To https://github.com/xiaoming/xiaoming.github.io</span><br><span class="line">   13d26bd..91308fd  HEAD -&gt; master</span><br><span class="line">&#x5206;&#x652F; &apos;master&apos; &#x8BBE;&#x7F6E;&#x4E3A;&#x8DDF;&#x8E2A;&#x6765;&#x81EA; &apos;https://github.com/xiaoming/xiaoming.github.io&apos; &#x7684;&#x8FDC;&#x7A0B;&#x5206;&#x652F; &apos;master&apos;&#x3002;</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
+
+<p>&#x5C45;&#x7136;&#x5C31;&#xFF0C;&#x53EF;&#x4EE5;&#x4E86;&#x2026;</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/error/" rel="tag"><i class="fa fa-tag"></i> error</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/hexo-add-aplayer-plugins/" rel="prev" title="给Hexo添加音乐播放器插件">
+      <i class="fa fa-chevron-left"></i> 给Hexo添加音乐播放器插件
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/hexo-add-disqus/" rel="next" title="Hexo添加评论系统Disqus">
+      Hexo添加评论系统Disqus <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ftzz100"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">ftzz100</p>
+  <div class="site-description" itemprop="description">爱多一次，醉多一次</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-lemon"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ftzz100</span>
+</div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <!--<script src="/lib/metingjs/Meting.min.js"></script>-->
+    <script src="/js/Meting.min.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+    <!--aplayer start-->
+    <div class="aplayer no-destroy" 
+    data-id="5014450505" 
+    data-server="netease" 
+    data-type="playlist" 
+    data-fixed="true" 
+    data-autoplay="false" 
+    data-order="list" 
+    data-volume="0.5" 
+    data-theme="#cc543a" 
+    data-preload="auto" >
+    </div>
+    <!--aplayer end-->
+  </div>
+
+  
+    <script src='https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe-ui-default.min.js'></script>
+    <script type="text/javascript" src="/js/image.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  //elements: 'a[href]:not(.headerlink):not([href^="#"]):not([href="javascript:void(0)"])',
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+  //console.log("lm");
+  //pjax_reload()
+  //loadMeting();
+});
+
+//document.addEventListener('pjax:complete', function () {
+    //console.log('complete')
+    //alert("complete")
+    //
+    //pjax_reload();
+    //return false;
+    // $(document).pjax('a[target!=_blank][rel!=group]', '#pjax-container', {
+    //     fragment: '#pjax-container',
+    //     timeout: 1000,
+    // });
+//});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqusjs.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', () => {
+    window.dsqjs = new DisqusJS({
+      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
+      apikey    : 'hlDVq5932DR1fc7c0kaBtsENfBkqcmGJ23C2Pv4lc3AkfFcCvlDhj9CesPwQKpts',
+      shortname : 'ftzzloom-im',
+      url       : "https://ftzz100.github.io/hexo-deploy-trouble/",
+      identifier: "hexo-deploy-trouble/",
+      title     : "Hexo部署到GitHub的问题",
+    });
+  }, window.DisqusJS);
+});
+</script>
+
+    </div>
+</body>
+</html>

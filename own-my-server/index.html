@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.css' rel='stylesheet'/>
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/default-skin/default-skin.min.css' rel='stylesheet'/>
+    <script src='https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ftzz100.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":250,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="&amp;#x4E00;&amp;#x76F4;&amp;#x60F3;&amp;#x62E5;&amp;#x6709;&amp;#x4E00;&amp;#x53F0;&amp;#x53EF;&amp;#x4EE5;&amp;#x5728;&amp;#x4E0A;&amp;#x9762;&amp;#x8FD0;&amp;#x884C;&amp;#x811A;&amp;#x672C;&amp;#xFF0C;&amp;#x5B89;&amp;#x88C5;&amp;#x8F6F;&amp;#x4EF6;&amp;#xFF0C;&amp;#x5B66;&amp;#x4E60;linux&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拥有自己的服务器">
+<meta property="og:url" content="https://ftzz100.github.io/own-my-server/index.html">
+<meta property="og:site_name" content="Freemon">
+<meta property="og:description" content="&amp;#x4E00;&amp;#x76F4;&amp;#x60F3;&amp;#x62E5;&amp;#x6709;&amp;#x4E00;&amp;#x53F0;&amp;#x53EF;&amp;#x4EE5;&amp;#x5728;&amp;#x4E0A;&amp;#x9762;&amp;#x8FD0;&amp;#x884C;&amp;#x811A;&amp;#x672C;&amp;#xFF0C;&amp;#x5B89;&amp;#x88C5;&amp;#x8F6F;&amp;#x4EF6;&amp;#xFF0C;&amp;#x5B66;&amp;#x4E60;linux&amp;#x">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ftzz100.github.io/own-my-server/2019-10-11-00-03-07.png">
+<meta property="og:image" content="https://ftzz100.github.io/own-my-server/2019-10-12-11-05-48.png">
+<meta property="og:image" content="https://ftzz100.github.io/own-my-server/2019-10-12-11-54-17.png">
+<meta property="og:updated_time" content="2020-05-18T12:47:52.132Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="拥有自己的服务器">
+<meta name="twitter:description" content="&amp;#x4E00;&amp;#x76F4;&amp;#x60F3;&amp;#x62E5;&amp;#x6709;&amp;#x4E00;&amp;#x53F0;&amp;#x53EF;&amp;#x4EE5;&amp;#x5728;&amp;#x4E0A;&amp;#x9762;&amp;#x8FD0;&amp;#x884C;&amp;#x811A;&amp;#x672C;&amp;#xFF0C;&amp;#x5B89;&amp;#x88C5;&amp;#x8F6F;&amp;#x4EF6;&amp;#xFF0C;&amp;#x5B66;&amp;#x4E60;linux&amp;#x">
+<meta name="twitter:image" content="https://ftzz100.github.io/own-my-server/2019-10-11-00-03-07.png">
+
+<link rel="canonical" href="https://ftzz100.github.io/own-my-server/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>拥有自己的服务器 | Freemon</title><meta name="robots" content="noindex">
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167084562-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167084562-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Freemon</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-reading">
+
+    <a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>Reading</a>
+
+  </li>
+        <li class="menu-item menu-item-friends">
+
+    <a href="/friends" rel="section"><i class="fa fa-link fa-fw"></i>Friends</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ftzz100.github.io/own-my-server/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ftzz100">
+      <meta itemprop="description" content="爱多一次，醉多一次">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemon">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          拥有自己的服务器
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-07 18:54:52" itemprop="dateCreated datePublished" datetime="2019-10-07T18:54:52+08:00">2019-10-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x4E00;&#x76F4;&#x60F3;&#x62E5;&#x6709;&#x4E00;&#x53F0;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x9762;&#x8FD0;&#x884C;&#x811A;&#x672C;&#xFF0C;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#xFF0C;&#x5B66;&#x4E60;linux&#x77E5;&#x8BC6;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4ECA;&#x5929;&#xFF0C;&#x6211;&#x7684;&#x68A6;&#x60F3;&#x5B9E;&#x73B0;&#x4E86;&#xFF01;</p>
+<a id="more"></a>
+
+<h3 id="1-&#x8D2D;&#x4E70;&#x670D;&#x52A1;&#x5668;"><a href="#1-&#x8D2D;&#x4E70;&#x670D;&#x52A1;&#x5668;" class="headerlink" title="1.&#x8D2D;&#x4E70;&#x670D;&#x52A1;&#x5668;"></a>1.&#x8D2D;&#x4E70;&#x670D;&#x52A1;&#x5668;</h3><p>&#x2003;&#x2003;&#x8FD9;&#x91CC;&#x7684;&#x670D;&#x52A1;&#x5668;&#x662F;&#x6307;vps&#xFF0C;&#x6211;&#x9009;&#x62E9;&#x8D2D;&#x4E70;&#x7684;&#x662F;&#x56FD;&#x5916;&#x77E5;&#x540D;&#x7684;vultr&#x4E3B;&#x673A;&#x5546;&#xFF0C;&#x8D28;&#x91CF;&#x597D;&#x3001;&#x670D;&#x52A1;&#x51FA;&#x4F17;&#x3002;&#x53E6;&#x5916;&#x4E5F;&#x6709;&#x53EB;&#x642C;&#x74E6;&#x5DE5;&#x7684;</p>
+<p>&#x6CE8;&#x518C;&#x5730;&#x5740;&#xFF1A;<a href="https://www.vultr.com" rel="noopener external nofollow noreferrer" target="_blank">https://www.vultr.com</a><br>&#x7528;&#x90AE;&#x7BB1;&#x5C31;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x5E10;&#x53F7;&#xFF0C;&#x5728;&#x90AE;&#x7BB1;&#x6FC0;&#x6D3B;&#x5E10;&#x53F7;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x5145;&#x503C;&#x5C31;&#x53EF;&#x4EE5;&#x642D;&#x5EFA;&#x670D;&#x52A1;&#x5668;&#x4E86;&#x3002;&#x5145;&#x503C;&#x4ED8;&#x6B3E;&#x652F;&#x6301;&#x652F;&#x4ED8;&#x5B9D;&#x7B49;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+<p><img src="/own-my-server/2019-10-11-00-03-07.png" alt></p>
+<!-- <img src="/own-my-server/2019-10-11-00-03-07.png" title="This is an example image"> -->
+
+<p>&#x6CE8;&#x518C;&#x56FE;&#x6587;&#x6B65;&#x9AA4;&#x6682;&#x65F6;&#x7565;<br><a href="https://darrenliuwei.github.io/kxsw/vps.html" rel="noopener external nofollow noreferrer" target="_blank">https://darrenliuwei.github.io/kxsw/vps.html</a><br><a href="https://www.vultrblog.com/purchasing-tutorials.html" rel="noopener external nofollow noreferrer" target="_blank">https://www.vultrblog.com/purchasing-tutorials.html</a></p>
+<h3 id="&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;"><a href="#&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;" class="headerlink" title="&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;"></a>&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;</h3><p>&#x90E8;&#x7F72;&#x597D;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x540E;&#xFF0C;&#x9996;&#x5148;&#x53BB;<a href="http://ping.chinaz.com" rel="noopener external nofollow noreferrer" target="_blank">http://ping.chinaz.com</a> ping&#x4E00;&#x4E0B;IP&#x5730;&#x5740;&#xFF0C;&#x53C2;&#x7167;&#x6559;&#x7A0B;<a href="https://www.vultrblog.com/vultr-wall/.html" rel="noopener external nofollow noreferrer" target="_blank">https://www.vultrblog.com/vultr-wall/.html</a></p>
+<p>&#x642D;&#x5EFA;&#x4E86;&#x65E5;&#x672C;&#xFF0C;&#x7F8E;&#x56FD;&#x7684;&#x670D;&#x52A1;&#x5668;ip&#x90FD;ping&#x4E0D;&#x901A;&#xFF0C;&#x770B;&#x6765;&#x662F;&#x88AB;&#x5899;&#x4E86;&#x3002;&#x8BD5;&#x4E86;&#x591A;&#x6B21;&#xFF0C;&#x7EC8;&#x4E8E;ping&#x901A;&#x4E86;&#x4E00;&#x53F0;&#x3002;<br>&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#x65B9;&#x6CD5;<br>ssh root@ip&#x5730;&#x5740;<br>&#x8F93;&#x5165;&#x5BC6;&#x7801;<br>&#x7ED3;&#x679C;&#x8FDB;&#x5165;&#x670D;&#x52A1;&#x5668;&#x540E;&#x53D1;&#x73B0;&#x901F;&#x5EA6;&#x5F88;&#x6162;&#xFF0C;&#x6572;&#x7684;&#x547D;&#x4EE4;&#x8981;&#x51E0;&#x79D2;&#x540E;&#x624D;&#x663E;&#x793A;&#x3002;&#x8FDE;&#x63A5;&#x56FD;&#x5916;&#x7684;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x8FD9;&#x4E48;&#x6162;&#x7684;&#x554A;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x627E;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x3002;<br><a href="https://www.v2ex.com/t/314422" rel="noopener external nofollow noreferrer" target="_blank">https://www.v2ex.com/t/314422</a><br>&#x4E00;&#xFF1A;&#x7528;ss&#x4EE3;&#x7406;&#xFF0C;&#x63D0;&#x9AD8;&#x901F;&#x5EA6;&#x3002;&#xFF08;&#x6CA1;ss&#xFF0C;&#x5C31;&#x6CA1;&#x8BD5;&#xFF09;<br>&#x4E8C;&#xFF1A;&#x7528;mosh&#xFF0C;&#x5B83;&#x662F;Linux&#x4E0B;&#x57FA;&#x4E8E;UDP&#x7684;SSH&#x8FDE;&#x63A5;&#x5DE5;&#x5177;<br>&#x65B9;&#x6CD5;&#xFF1A;<br>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;mosh&#xFF0C;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://mosh.org/" rel="noopener external nofollow noreferrer" target="_blank">https://mosh.org/</a><br>&#x6211;&#x7684;&#x7CFB;&#x7EDF;&#x662F;macOS&#xFF0C;&#x4E0B;&#x8F7D;&#x4E86;pkg&#x6587;&#x4EF6;&#x5E76;&#x5B89;&#x88C5;&#x597D;<br>&#x64CD;&#x4F5C;<br><a href="https://www.cnblogs.com/journeyonmyway/p/8908483.html" rel="noopener external nofollow noreferrer" target="_blank">https://www.cnblogs.com/journeyonmyway/p/8908483.html</a> </p>
+<h3 id="&#x63D0;&#x9AD8;&#x901F;&#x5EA6;"><a href="#&#x63D0;&#x9AD8;&#x901F;&#x5EA6;" class="headerlink" title="&#x63D0;&#x9AD8;&#x901F;&#x5EA6;"></a>&#x63D0;&#x9AD8;&#x901F;&#x5EA6;</h3><p><img src="/own-my-server/2019-10-12-11-05-48.png" alt></p>
+<p><img src="/own-my-server/2019-10-12-11-54-17.png" alt="sss"></p>
+<!-- flag of hidden posts -->
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-购买服务器"><span class="nav-number">1.</span> <span class="nav-text">1.购买服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接服务器"><span class="nav-number">2.</span> <span class="nav-text">连接服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提高速度"><span class="nav-number">3.</span> <span class="nav-text">提高速度</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ftzz100"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">ftzz100</p>
+  <div class="site-description" itemprop="description">爱多一次，醉多一次</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-lemon"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ftzz100</span>
+</div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <!--<script src="/lib/metingjs/Meting.min.js"></script>-->
+    <script src="/js/Meting.min.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+    <!--aplayer start-->
+    <div class="aplayer no-destroy" 
+    data-id="5014450505" 
+    data-server="netease" 
+    data-type="playlist" 
+    data-fixed="true" 
+    data-autoplay="false" 
+    data-order="list" 
+    data-volume="0.5" 
+    data-theme="#cc543a" 
+    data-preload="auto" >
+    </div>
+    <!--aplayer end-->
+  </div>
+
+  
+    <script src='https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe-ui-default.min.js'></script>
+    <script type="text/javascript" src="/js/image.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  //elements: 'a[href]:not(.headerlink):not([href^="#"]):not([href="javascript:void(0)"])',
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+  //console.log("lm");
+  //pjax_reload()
+  //loadMeting();
+});
+
+//document.addEventListener('pjax:complete', function () {
+    //console.log('complete')
+    //alert("complete")
+    //
+    //pjax_reload();
+    //return false;
+    // $(document).pjax('a[target!=_blank][rel!=group]', '#pjax-container', {
+    //     fragment: '#pjax-container',
+    //     timeout: 1000,
+    // });
+//});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqusjs.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', () => {
+    window.dsqjs = new DisqusJS({
+      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
+      apikey    : 'hlDVq5932DR1fc7c0kaBtsENfBkqcmGJ23C2Pv4lc3AkfFcCvlDhj9CesPwQKpts',
+      shortname : 'ftzzloom-im',
+      url       : "https://ftzz100.github.io/own-my-server/",
+      identifier: "own-my-server/",
+      title     : "拥有自己的服务器",
+    });
+  }, window.DisqusJS);
+});
+</script>
+
+    </div>
+</body>
+</html>

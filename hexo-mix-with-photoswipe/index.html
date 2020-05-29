@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.css' rel='stylesheet'/>
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/default-skin/default-skin.min.css' rel='stylesheet'/>
+    <script src='https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ftzz100.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":250,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="&amp;#x2003;&amp;#x2003;hexo&amp;#x535A;&amp;#x5BA2;&amp;#x6587;&amp;#x7AE0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#xFF0C;&amp;#x70B9;&amp;#x51FB;&amp;#x9ED8;&amp;#x8BA4;&amp;#x662F;&amp;#x4E0D;&amp;#x80FD;&amp;#x653E;&amp;#x5927;&amp;#x7684;&amp;#xFF0C;&amp;#x8981;&amp;#x5F00;&amp;#x542F;&amp;#x8">
+<meta name="keywords" content="hexo,photoswipe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="更改hexo图片放大方式">
+<meta property="og:url" content="https://ftzz100.github.io/hexo-mix-with-photoswipe/index.html">
+<meta property="og:site_name" content="Freemon">
+<meta property="og:description" content="&amp;#x2003;&amp;#x2003;hexo&amp;#x535A;&amp;#x5BA2;&amp;#x6587;&amp;#x7AE0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#xFF0C;&amp;#x70B9;&amp;#x51FB;&amp;#x9ED8;&amp;#x8BA4;&amp;#x662F;&amp;#x4E0D;&amp;#x80FD;&amp;#x653E;&amp;#x5927;&amp;#x7684;&amp;#xFF0C;&amp;#x8981;&amp;#x5F00;&amp;#x542F;&amp;#x8">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ftzz100.github.io/hexo-mix-with-photoswipe/CD1750090425.png">
+<meta property="og:image" content="https://ftzz100.github.io/hexo-mix-with-photoswipe/CD1802040510.png">
+<meta property="og:image" content="https://ftzz100.github.io/hexo-mix-with-photoswipe/CD1821090510.png">
+<meta property="og:updated_time" content="2020-05-25T11:57:56.440Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="更改hexo图片放大方式">
+<meta name="twitter:description" content="&amp;#x2003;&amp;#x2003;hexo&amp;#x535A;&amp;#x5BA2;&amp;#x6587;&amp;#x7AE0;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#xFF0C;&amp;#x70B9;&amp;#x51FB;&amp;#x9ED8;&amp;#x8BA4;&amp;#x662F;&amp;#x4E0D;&amp;#x80FD;&amp;#x653E;&amp;#x5927;&amp;#x7684;&amp;#xFF0C;&amp;#x8981;&amp;#x5F00;&amp;#x542F;&amp;#x8">
+<meta name="twitter:image" content="https://ftzz100.github.io/hexo-mix-with-photoswipe/CD1750090425.png">
+
+<link rel="canonical" href="https://ftzz100.github.io/hexo-mix-with-photoswipe/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>更改hexo图片放大方式 | Freemon</title><meta name="robots" content="noindex">
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167084562-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167084562-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Freemon</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-reading">
+
+    <a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>Reading</a>
+
+  </li>
+        <li class="menu-item menu-item-friends">
+
+    <a href="/friends" rel="section"><i class="fa fa-link fa-fw"></i>Friends</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ftzz100.github.io/hexo-mix-with-photoswipe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ftzz100">
+      <meta itemprop="description" content="爱多一次，醉多一次">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemon">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          更改hexo图片放大方式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-25 16:07:34" itemprop="dateCreated datePublished" datetime="2020-04-25T16:07:34+08:00">2020-04-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x2003;&#x2003;hexo&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x7684;&#x56FE;&#x7247;&#xFF0C;&#x70B9;&#x51FB;&#x9ED8;&#x8BA4;&#x662F;&#x4E0D;&#x80FD;&#x653E;&#x5927;&#x7684;&#xFF0C;&#x8981;&#x5F00;&#x542F;&#x81EA;&#x5E26;&#x7684;fancybox&#x56FE;&#x7247;&#x653E;&#x5927;&#x529F;&#x80FD;&#x624D;&#x53EF;&#x4EE5;&#x3002;&#x56E0;&#x4E3A;&#x6BD4;&#x8F83;&#x559C;&#x6B22;&#x53E6;&#x5916;&#x4E00;&#x6B3E;&#x56FE;&#x7247;&#x653E;&#x5927;&#x529F;&#x80FD;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x4FBF;&#x6574;&#x5408;&#x5230;nexT7&#x4E3B;&#x9898;&#x4E2D;&#xFF0C;&#x5C06;&#x56FE;&#x7247;&#x653E;&#x5927;&#x65B9;&#x5F0F;&#x4FEE;&#x6539;&#x4E86;&#x3002;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x53EB;PhotoSwipe&#x3002;</p>
+<a id="more"></a>
+
+<h3 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h3><p>PhotoSwipe&#x662F;&#x4E00;&#x6B3E;&#x4F18;&#x79C0;&#x7684;&#x56FE;&#x7247;&#x653E;&#x5927;&#x7684;js&#x63D2;&#x4EF6;&#xFF0C;&#x7EAF;js&#x4EE3;&#x7801;&#x7F16;&#x5199;&#x3002;<br>&#x5177;&#x4F53;&#x8BE6;&#x60C5;&#x53EF;&#x4EE5;&#x53BB;&#x5B98;&#x7F51;&#x770B;&#x770B;&#xFF0C;&#x5B98;&#x7F51;&#x5730;&#x5740;&#xFF1A; <a href="https://photoswipe.com/" rel="noopener external nofollow noreferrer" target="_blank">PhotoSwipe</a></p>
+<h3 id="&#x5173;&#x95ED;fancybox"><a href="#&#x5173;&#x95ED;fancybox" class="headerlink" title="&#x5173;&#x95ED;fancybox"></a>&#x5173;&#x95ED;fancybox</h3><figure class="highlight php"><figcaption><span>themes/next/_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fancybox: <span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x914D;&#x7F6E;photoswipe"><a href="#&#x914D;&#x7F6E;photoswipe" class="headerlink" title="&#x914D;&#x7F6E;photoswipe"></a>&#x914D;&#x7F6E;photoswipe</h3><p>&#x5728;&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x52A0;&#x5165;photoswipe&#x5F00;&#x5173;&#x914D;&#x7F6E;</p>
+<figure class="highlight php"><figcaption><span>themes/next/_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># photoswipe</span></span><br><span class="line">photoswipe: <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x5F15;&#x5165;&#x6240;&#x9700;&#x6587;&#x4EF6;"><a href="#&#x5F15;&#x5165;&#x6240;&#x9700;&#x6587;&#x4EF6;" class="headerlink" title="&#x5F15;&#x5165;&#x6240;&#x9700;&#x6587;&#x4EF6;"></a>&#x5F15;&#x5165;&#x6240;&#x9700;&#x6587;&#x4EF6;</h3><figure class="highlight php"><figcaption><span>themes/next/layout/_scripts/vendors.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">{%- <span class="keyword">if</span> theme.photoswipe %}</span><br><span class="line">    &lt;link href=<span class="string">&apos;https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.css&apos;</span> rel=<span class="string">&apos;stylesheet&apos;</span>/&gt;</span><br><span class="line">    &lt;link href=<span class="string">&apos;https://cdn.jsdelivr.net/npm/photoswipe/dist/default-skin/default-skin.min.css&apos;</span> rel=<span class="string">&apos;stylesheet&apos;</span>/&gt;</span><br><span class="line">    &lt;script src=<span class="string">&apos;https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&apos;</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=<span class="string">&apos;https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js&apos;</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=<span class="string">&apos;https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.js&apos;</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=<span class="string">&apos;https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe-ui-default.min.js&apos;</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;/js/image.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">{%- <span class="keyword">endif</span> %}</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x5199;&#x529F;&#x80FD;"><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x5199;&#x529F;&#x80FD;" class="headerlink" title="&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x5199;&#x529F;&#x80FD;"></a>&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x5199;&#x529F;&#x80FD;</h3><p>&#x521B;&#x5EFA;themes/next/source/js/image.js&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x9002;&#x5408;nexT7&#x4E3B;&#x9898;&#x7684;&#x56FE;&#x7247;&#x653E;&#x5927;&#x529F;&#x80FD;&#x3002;</p>
+<figure class="highlight js"><figcaption><span>themes/next/source/js/image.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//lazyload &#x56FE;&#x7247;&#x61D2;&#x52A0;&#x8F7D;</span></span><br><span class="line">$(<span class="string">&quot;.content-wrap img&quot;</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    $(<span class="keyword">this</span>).attr(<span class="string">&quot;class&quot;</span>, <span class="string">&quot;lazy&quot;</span>);</span><br><span class="line">    $(<span class="keyword">this</span>).attr(<span class="string">&quot;data-src&quot;</span>, $(<span class="keyword">this</span>).attr(<span class="string">&quot;src&quot;</span>));</span><br><span class="line">    $(<span class="keyword">this</span>).removeAttr(<span class="string">&quot;src&quot;</span>);</span><br><span class="line">    $(<span class="keyword">this</span>).wrap(<span class="string">&quot;&lt;div class=\&quot;lazy-wrapper\&quot;&gt;&lt;/div&gt;&quot;</span>).wrap(<span class="string">&quot;&lt;thefigure&gt;&lt;/thefigure&gt;&quot;</span>).wrap(<span class="string">&quot;&lt;a href=&apos;#&apos;&gt;&lt;/a&gt;&quot;</span>);</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> lazyLoadInstance = <span class="keyword">new</span> LazyLoad({</span><br><span class="line">        elements_selector: <span class="string">&quot;.lazy&quot;</span></span><br><span class="line">    });</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="comment">//photoswipe</span></span><br><span class="line"><span class="comment">//PhotoSwipe &#x906E;&#x7F69;&#x5C42;</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">&apos;&lt;div class=&quot;pswp&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-hidden=&quot;true&quot;&gt;&lt;div class=&quot;pswp__bg&quot;&gt;&lt;/div&gt;&lt;div class=&quot;pswp__scroll-wrap&quot;&gt;&lt;div class=&quot;pswp__container&quot;&gt;&lt;div class=&quot;pswp__item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;pswp__item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;pswp__item&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;pswp__ui pswp__ui--hidden&quot;&gt;&lt;div class=&quot;pswp__top-bar&quot;&gt;&lt;div class=&quot;pswp__counter&quot;&gt;&lt;/div&gt;&lt;button class=&quot;pswp__button pswp__button--close&quot; title=&quot;Close (Esc)&quot;&gt;&lt;/button&gt;&lt;button class=&quot;pswp__button pswp__button--share&quot; title=&quot;Share&quot;&gt;&lt;/button&gt;&lt;button class=&quot;pswp__button pswp__button--fs&quot; title=&quot;Toggle fullscreen&quot;&gt;&lt;/button&gt;&lt;button class=&quot;pswp__button pswp__button--zoom&quot; title=&quot;Zoom in/out&quot;&gt;&lt;/button&gt;&lt;div class=&quot;pswp__preloader&quot;&gt;&lt;div class=&quot;pswp__preloader__icn&quot;&gt;&lt;div class=&quot;pswp__preloader__cut&quot;&gt;&lt;div class=&quot;pswp__preloader__donut&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;pswp__share-modal pswp__share-modal--hidden pswp__single-tap&quot;&gt;&lt;div class=&quot;pswp__share-tooltip&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;button class=&quot;pswp__button pswp__button--arrow--left&quot; title=&quot;Previous (arrow left)&quot;&gt;&lt;/button&gt;&lt;button class=&quot;pswp__button pswp__button--arrow--right&quot; title=&quot;Next (arrow right)&quot;&gt;&lt;/button&gt;&lt;div class=&quot;pswp__caption&quot;&gt;&lt;div class=&quot;pswp__caption__center&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&apos;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;</span></span><br><span class="line"><span class="keyword">var</span> initPhotoSwipeFromDOM = <span class="function"><span class="keyword">function</span>(<span class="params">gallerySelector</span>) </span>{</span><br><span class="line">    <span class="comment">//find the all img from </span></span><br><span class="line">    <span class="keyword">var</span> parseThumbnailElements = <span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>{</span><br><span class="line">        <span class="keyword">var</span> thumbElements = el.getElementsByTagName(<span class="string">&apos;img&apos;</span>)</span><br><span class="line">        <span class="keyword">var</span> numNodes = thumbElements.length,</span><br><span class="line">            items = [],</span><br><span class="line">            imageEl,</span><br><span class="line">            item;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numNodes; i++) {</span><br><span class="line">            imageEl = thumbElements[i]; <span class="comment">// &lt;img&gt; element</span></span><br><span class="line">            <span class="keyword">if</span>(imageEl.nodeType !== <span class="number">1</span>) {</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="comment">// create slide object</span></span><br><span class="line">            item = {</span><br><span class="line">                src: imageEl.getAttribute(<span class="string">&apos;src&apos;</span>),</span><br><span class="line">                w: imageEl.naturalWidth,</span><br><span class="line">                h: imageEl.naturalHeight</span><br><span class="line">               </span><br><span class="line">            };</span><br><span class="line">            item.el = imageEl; <span class="comment">// save link to element for getThumbBoundsFn</span></span><br><span class="line">            items.push(item);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> items;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// find nearest parent element</span></span><br><span class="line">    <span class="keyword">var</span> closest = <span class="function"><span class="keyword">function</span> <span class="title">closest</span>(<span class="params">el, fn</span>) </span>{</span><br><span class="line">        <span class="keyword">return</span> el &amp;&amp; ( fn(el) ? el : closest(el.parentNode, fn) );</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// triggers when user clicks on thumbnail</span></span><br><span class="line">    <span class="keyword">var</span> onThumbnailsClick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>{</span><br><span class="line">        e = e || <span class="built_in">window</span>.event;</span><br><span class="line">        e.preventDefault ? e.preventDefault() : e.returnValue = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">var</span> eTarget = e.target || e.srcElement;</span><br><span class="line">        <span class="comment">// find root element of slide</span></span><br><span class="line">        <span class="keyword">var</span> clickedListItem = closest(eTarget, <span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>{</span><br><span class="line">            <span class="keyword">return</span> (el.tagName &amp;&amp; el.tagName.toUpperCase() === <span class="string">&apos;THEFIGURE&apos;</span>);</span><br><span class="line">        }); <span class="comment">//element &lt;thefigure&gt;</span></span><br><span class="line">        <span class="keyword">if</span>(!clickedListItem) {</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> clickedGallery = galleryElements[<span class="number">0</span>], <span class="comment">//element &lt;.post-body&gt;</span></span><br><span class="line">            childNodes = clickedGallery.getElementsByTagName(<span class="string">&apos;thefigure&apos;</span>),</span><br><span class="line">            numChildNodes = childNodes.length,</span><br><span class="line">            nodeIndex = <span class="number">0</span>,</span><br><span class="line">            index;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numChildNodes; i++) {</span><br><span class="line">            <span class="keyword">if</span>(childNodes[i].nodeType !== <span class="number">1</span>) { </span><br><span class="line">                <span class="keyword">continue</span>; </span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(childNodes[i] === clickedListItem) {</span><br><span class="line">                index = nodeIndex;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">            nodeIndex++;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(index &gt;= <span class="number">0</span>) { <span class="comment">//the index of img from .post-body </span></span><br><span class="line">            <span class="comment">// open PhotoSwipe if valid index found</span></span><br><span class="line">            openPhotoSwipe( index, clickedGallery );</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// parse picture index and gallery index from URL (#&amp;pid=1&amp;gid=2)</span></span><br><span class="line">    <span class="keyword">var</span> photoswipeParseHash = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">        <span class="keyword">var</span> hash = <span class="built_in">window</span>.location.hash.substring(<span class="number">1</span>),</span><br><span class="line">        params = {};</span><br><span class="line">        <span class="keyword">if</span>(hash.length &lt; <span class="number">5</span>) {</span><br><span class="line">            <span class="keyword">return</span> params;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">var</span> vars = hash.split(<span class="string">&apos;&amp;&apos;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; vars.length; i++) {</span><br><span class="line">            <span class="keyword">if</span>(!vars[i]) {</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">var</span> pair = vars[i].split(<span class="string">&apos;=&apos;</span>);  </span><br><span class="line">            <span class="keyword">if</span>(pair.length &lt; <span class="number">2</span>) {</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            }           </span><br><span class="line">            params[pair[<span class="number">0</span>]] = pair[<span class="number">1</span>];</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(params.gid) {</span><br><span class="line">            params.gid = <span class="built_in">parseInt</span>(params.gid, <span class="number">10</span>);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> params;</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> openPhotoSwipe = <span class="function"><span class="keyword">function</span>(<span class="params">index, galleryElement, disableAnimation, fromURL</span>) </span>{</span><br><span class="line">        <span class="keyword">var</span> pswpElement = <span class="built_in">document</span>.querySelectorAll(<span class="string">&apos;.pswp&apos;</span>)[<span class="number">0</span>],</span><br><span class="line">            gallery,</span><br><span class="line">            options,</span><br><span class="line">            items;</span><br><span class="line">        </span><br><span class="line">        items = parseThumbnailElements(galleryElement);</span><br><span class="line">        <span class="comment">// &#x914D;&#x7F6E;&#x9879;</span></span><br><span class="line">        options = {</span><br><span class="line">            <span class="comment">// define gallery index (for URL)</span></span><br><span class="line">            galleryUID: galleryElement.getAttribute(<span class="string">&apos;data-pswp-uid&apos;</span>),</span><br><span class="line">            showHideOpacity: <span class="literal">true</span>,</span><br><span class="line">            loadingIndicatorDelay: <span class="number">1000</span>,</span><br><span class="line">            <span class="comment">// Buttons/elements</span></span><br><span class="line">            closeEl:<span class="literal">true</span>,</span><br><span class="line">            captionEl: <span class="literal">true</span>,</span><br><span class="line">            fullscreenEl: <span class="literal">false</span>, <span class="comment">//&#x5168;&#x5C4F;&#x6309;&#x94AE;</span></span><br><span class="line">            zoomEl: <span class="literal">false</span>, <span class="comment">//&#x653E;&#x5927;&#x7F29;&#x5C0F;&#x6309;&#x94AE;</span></span><br><span class="line">            shareEl: <span class="literal">false</span>, <span class="comment">//&#x5206;&#x4EAB;&#x6309;&#x94AE;</span></span><br><span class="line">            counterEl: <span class="literal">true</span>, <span class="comment">//&#x56FE;&#x7247;&#x6570;&#x76EE;</span></span><br><span class="line">            arrowEl: <span class="literal">false</span>, <span class="comment">//&#x5DE6;&#x53F3;&#x8F6E;&#x64AD;&#x7BAD;&#x5934;</span></span><br><span class="line">            preloaderEl: <span class="literal">false</span>, <span class="comment">//&#x9884;&#x52A0;&#x8F7D;</span></span><br><span class="line">            <span class="comment">//preload: [1,3],</span></span><br><span class="line">            showAnimationDuration: <span class="number">0</span>,</span><br><span class="line">            hideAnimationDuration: <span class="number">0</span>,</span><br><span class="line">            closeOnScroll: <span class="literal">false</span>, <span class="comment">//&#x6EDA;&#x52A8;&#x5173;&#x95ED;&#x56FE;&#x7247;</span></span><br><span class="line">            <span class="comment">// getThumbBoundsFn: function(index) {</span></span><br><span class="line">            <span class="comment">//     var thumbnail = items[index].el // find thumbnail</span></span><br><span class="line">            <span class="comment">//     var pageYScroll = window.pageYOffset || document.documentElement.scrollTop,</span></span><br><span class="line">            <span class="comment">//         rect = thumbnail.getBoundingClientRect(); </span></span><br><span class="line">                  </span><br><span class="line">            <span class="comment">//     return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};</span></span><br><span class="line">            <span class="comment">// }</span></span><br><span class="line">        };</span><br><span class="line"></span><br><span class="line">        <span class="comment">// PhotoSwipe opened from URL</span></span><br><span class="line">        <span class="keyword">if</span>(fromURL) {</span><br><span class="line">            <span class="keyword">if</span>(options.galleryPIDs) {</span><br><span class="line">                <span class="comment">// parse real index when custom PIDs are used </span></span><br><span class="line">                <span class="comment">// http://photoswipe.com/documentation/faq.html#custom-pid-in-url</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; items.length; j++) {</span><br><span class="line">                    <span class="keyword">if</span>(items[j].pid == index) {</span><br><span class="line">                        options.index = j;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                <span class="comment">// in URL indexes start from 1</span></span><br><span class="line">                options.index = <span class="built_in">parseInt</span>(index, <span class="number">10</span>) - <span class="number">1</span>;</span><br><span class="line">            }</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            options.index = <span class="built_in">parseInt</span>(index, <span class="number">10</span>);</span><br><span class="line">        }</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// exit if index not found</span></span><br><span class="line">        <span class="keyword">if</span>( <span class="built_in">isNaN</span>(options.index) ) {</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(disableAnimation) {</span><br><span class="line">            options.showAnimationDuration = <span class="number">0</span>;</span><br><span class="line">        }</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Pass data to PhotoSwipe and initialize it</span></span><br><span class="line">        gallery = <span class="keyword">new</span> PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);</span><br><span class="line">        gallery.init();</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// loop through all gallery elements and bind events</span></span><br><span class="line">    <span class="keyword">var</span> galleryElements = <span class="built_in">document</span>.querySelectorAll( gallerySelector );</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, l = galleryElements.length; i &lt; l; i++) {</span><br><span class="line">        galleryElements[i].setAttribute(<span class="string">&apos;data-pswp-uid&apos;</span>, i+<span class="number">1</span>);</span><br><span class="line">        galleryElements[i].onclick = onThumbnailsClick;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Parse URL and open gallery if it contains #&amp;pid=3&amp;gid=1</span></span><br><span class="line">    <span class="keyword">var</span> hashData = photoswipeParseHash();</span><br><span class="line">    <span class="keyword">if</span>(hashData.pid &amp;&amp; hashData.gid) {</span><br><span class="line">        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - <span class="number">1</span> ], <span class="literal">true</span>, <span class="literal">true</span> );</span><br><span class="line">    }</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="comment">// execute above function</span></span><br><span class="line">initPhotoSwipeFromDOM(<span class="string">&apos;.post-body&apos;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x6548;&#x679C;&#x9884;&#x89C8;"><a href="#&#x6548;&#x679C;&#x9884;&#x89C8;" class="headerlink" title="&#x6548;&#x679C;&#x9884;&#x89C8;"></a>&#x6548;&#x679C;&#x9884;&#x89C8;</h3><p><img src="/hexo-mix-with-photoswipe/CD1750090425.png" alt></p>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>&#x5947;&#x2026;&#x5947;&#x602A;&#x7684;&#x77E5;&#x8BC6;&#x589E;&#x52A0;&#x4E86;</p>
+<h3 id="&#x540E;&#x7EED;&#x82B1;&#x7D6E;"><a href="#&#x540E;&#x7EED;&#x82B1;&#x7D6E;" class="headerlink" title="&#x540E;&#x7EED;&#x82B1;&#x7D6E;"></a>&#x540E;&#x7EED;&#x82B1;&#x7D6E;</h3><p>&#x2003;&#x2003;&#x540E;&#x6765;&#x6709;&#x4E00;&#x5929;,&#x7A81;&#x7136;&#x53D1;&#x73B0;&#x9875;&#x9762;&#x7684;&#x94FE;&#x63A5;&#x70B9;&#x51FB;&#x540E;&#x65E0;&#x53CD;&#x5E94;&#xFF0C;&#x4E0D;&#x80FD;&#x8DF3;&#x8F6C;&#x4E86;&#x3002;&#x731C;&#x60F3;&#x53EF;&#x80FD;&#x662F;&#x8FD9;&#x4E2A;&#x4FEE;&#x6539;&#x5F15;&#x8D77;&#x7684;&#xFF0C;&#x679C;&#x7136;&#x5173;&#x95ED;<code>photoswipe</code>&#x540E;&#x4FBF;&#x6062;&#x590D;&#x6B63;&#x5E38;&#x4E86;&#x3002;&#x53EF;&#x4E00;&#x65F6;&#x627E;&#x4E0D;&#x5230;&#x662F;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x53C8;&#x60F3;&#x4FDD;&#x7559;photoswipe&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x5E72;&#x8106;&#x4FEE;&#x6539;&#x94FE;&#x63A5;&#x7684;&#x8DF3;&#x8F6C;&#x529F;&#x80FD;&#x3002;<br>&#x4E0D;&#x80FD;&#x8DF3;&#x8F6C;&#x662F;&#x5427;&#xFF0C;&#x589E;&#x52A0;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#x7528;<code>window.open()</code>&#x5C31;&#x5B8C;&#x4E8B;&#x4E86;&#x3002;&#x540C;&#x65F6;&#x53C8;&#x53D1;&#x73B0;&#x539F;&#x6765;&#x7684;a&#x6807;&#x7B7E;&#x91CC;&#x9762;&#x6709;<code>rel=&quot;noopener&quot;</code>&#x3002;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://photoswipe.com/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener&quot;</span>&gt;</span>PhotoSwipe<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x5B89;&#x5168;&#xFF0C;&#x53EF;&#x559C;&#x7684;&#x662F;windown.open()&#x73B0;&#x5728;&#x4E5F;&#x652F;&#x6301;&#x6DFB;&#x52A0;noopener&#x4E86;&#x3002;<br>open()&#x51FD;&#x6570;&#x91CC;&#x9762;&#x82E5;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;noopener&#xFF0C;&#x76EE;&#x6807;&#x9875;&#x9762;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5E76;&#x4FEE;&#x6539;&#x8DF3;&#x8FC7;&#x6765;&#x7684;&#x539F;&#x59CB;&#x9875;&#x9762;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x4F8B;&#x5B50;&#xFF1A;<a href="https://cdpn.io/adamlaki/debug/Qmdbjz" rel="noopener external nofollow noreferrer" target="_blank">noopener&#x6D4B;&#x8BD5;</a>&#x3002;&#x5F88;&#x6050;&#x6016;&#x662F;&#x5427;&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;&#x5371;&#x8A00;&#x8038;&#x542C;&#x3002;<br>&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#xFF0C;open()&#x51FD;&#x6570;&#x4E0D;&#x52A0;noopener&#xFF0C;&#x5728;&#x8DF3;&#x8F6C;&#x540E;&#x7684;&#x9875;&#x9762;&#x7684;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x5165;<code>window.opener</code>&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x539F;&#x6765;&#x9875;&#x9762;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;<br><img src="/hexo-mix-with-photoswipe/CD1802040510.png" alt></p>
+<p>&#x52A0;&#x4E0A;&#x4E4B;&#x540E;&#x518D;&#x6B21;&#x8DF3;&#x8F6C;&#x9875;&#x9762;&#x5E76;&#x4E14;&#x67E5;&#x770B;<code>window.opener</code>&#xFF0C;&#x53D1;&#x73B0;&#x662F;&#x7A7A;&#x7684;&#x4E86;&#xFF0C;&#x5B89;&#x5168;&#x4E86;&#xFF0C;&#x8212;&#x5766;&#xFF01;<br><img src="/hexo-mix-with-photoswipe/CD1821090510.png" alt></p>
+<p>&#x5177;&#x4F53;&#x53EF;&#x770B;&#x4E0B;&#x9762;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x52A0;&#x5230;&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x91CC;&#x9762;&#x5C31;&#x884C;&#x4E86;&#x3002;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ass = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;a&quot;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i &lt; ass.length; i++){</span><br><span class="line">    <span class="keyword">if</span>(ass[i].href &amp;&amp; ass[i].target &amp;&amp; ass[i].getAttribute(<span class="string">&quot;rel&quot;</span>)){</span><br><span class="line">        ass[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">            href = ass[i].href;</span><br><span class="line">            open(href,<span class="string">&quot;_blank&quot;</span>,<span class="string">&apos;noopener=yes,noreferrer=yes&apos;</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x540E;&#x7EED;&#x4E8C;"><a href="#&#x540E;&#x7EED;&#x4E8C;" class="headerlink" title="&#x540E;&#x7EED;&#x4E8C;"></a>&#x540E;&#x7EED;&#x4E8C;</h3><p>&#x5F00;&#x542F;&#x4E86;pjax&#x4E4B;&#x540E;&#xFF0C;&#x653E;&#x5927;&#x56FE;&#x7247;&#x518D;&#x5173;&#x95ED;&#x4E4B;&#x540E;&#xFF0C;&#x9875;&#x9762;&#x4F1A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x4E00;&#x904D;&#xFF0C;&#x53D1;&#x73B0;&#x662F;&#x89E6;&#x53D1;&#x4E86;pjax&#x3002;&#x800C;&#x6839;&#x672C;&#x539F;&#x56E0;&#x5C31;&#x662F;&#x70B9;&#x51FB;&#x653E;&#x5927;&#x56FE;&#x7247;&#x540E;&#xFF0C;&#x5730;&#x5740;&#x680F;&#x4F1A;&#x589E;&#x52A0;&#x951A;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x5BFC;&#x81F4;&#x4E86;url&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;pjax&#x63D2;&#x4EF6;&#x4F1A;&#x4EE5;&#x4E3A;&#x8BBF;&#x95EE;&#x65B0;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x6240;&#x4EE5;&#x624D;&#x4F1A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x4E00;&#x904D;&#x9875;&#x9762;&#x3002;&#x4E00;&#x5F00;&#x59CB;&#x662F;&#x8C03;&#x7528;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x4EE5;&#x53CA;history.pushState()&#x6765;&#x5904;&#x7406;&#xFF0C;&#x5728;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#x5904;&#x7406;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//gallery.init(); </span></span><br><span class="line"><span class="comment">//&#x6DFB;&#x52A0;pjax&#x7684;&#x5904;&#x7406;</span></span><br><span class="line">gallery.listen(<span class="string">&apos;close&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{ </span><br><span class="line">    <span class="comment">//close&#x4E4B;&#x540E;&#x9A6C;&#x4E0A;&#x5C06;url&#x4E0A;&#x7684;#&#x540E;&#x9762;&#x53C2;&#x6570;&#x53BB;&#x6389;&#xFF0C;&#x9632;&#x6B62;&#x8DF3;&#x8F6C;&#x89E6;&#x53D1;pjax</span></span><br><span class="line">    <span class="keyword">var</span> pathname = location.pathname;</span><br><span class="line">    <span class="comment">//var state = {url: pathname}</span></span><br><span class="line">    history.pushState( <span class="literal">null</span>, <span class="literal">null</span>, pathname); </span><br><span class="line">    <span class="comment">//history.replaceState( null, null, pathname); </span></span><br><span class="line">    <span class="comment">//&#x5173;&#x95ED;&#x540E;&#x4F9D;&#x7136;&#x6709;&#x91CD;&#x65B0;&#x6DFB;&#x52A0;#&#x951A;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x662F;&#x8981;&#x518D;&#x5904;&#x7406;url&#xFF0C;&#x9632;&#x6B62;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x56FE;&#x7247;&#x653E;&#x5927;</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">        history.replaceState( <span class="literal">null</span>, <span class="literal">null</span>, pathname);</span><br><span class="line">    },<span class="number">100</span>)</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+
+<p>&#x867D;&#x7136;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x3002;&#x8FD9;&#x6837;&#x4F1A;&#x5BFC;&#x81F4;history&#x7684;&#x957F;&#x5EA6;&#x4E00;&#x76F4;&#x589E;&#x52A0;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#xFF0C;&#x8FD9;&#x8FD8;&#x662F;&#x5176;&#x6B21;&#x7684;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x70B9;&#x5C31;&#x662F;&#x5728;&#x70B9;&#x51FB;&#x540E;&#x9000;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9000;&#x56DE;&#x7684;&#x662F;&#x4E0A;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x56DE;&#x5230;&#x524D;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x624B;&#x673A;&#x7AEF;&#x4F53;&#x9A8C;&#x5C24;&#x5176;&#x4E0D;&#x597D;&#x3002;<br>&#x65E0;&#x610F;&#x4E2D;&#x53D1;&#x73B0;&#x5728;&#x627E;pjax&#x56FE;&#x7247;&#x653E;&#x5927;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x770B;&#x5230;fancybox&#x653E;&#x5927;&#x56FE;&#x7247;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5927;&#x540C;&#x5C0F;&#x5F02;&#x3002;<br><a href="https://blog.xmgspace.me/archives/fancybox-pjax.html" rel="noopener external nofollow noreferrer" target="_blank">&#x7ED9;&#x535A;&#x5BA2;&#x6DFB;&#x52A0;&#x56FE;&#x7247;&#x706F;&#x7BB1;&#xFF0C;FancyBox+Pjax&#x8E29;&#x5751;&#x8BB0;</a><br>&#x91CC;&#x9762;&#x63D0;&#x5230;&#x5C06;FancyBox&#x63D2;&#x4EF6;&#x7684;hash&#x6A21;&#x5F0F;&#x5173;&#x95ED;&#x5C31;&#x884C;&#x3002;&#x6211;&#x8111;&#x6D77;&#x4E2D;&#x7075;&#x5149;&#x4E00;&#x95EA;&#xFF0C;photoswipe&#x529F;&#x80FD;&#x8FD9;&#x4E48;&#x5F3A;&#x5927;&#xFF0C;&#x5E94;&#x8BE5;&#x4E5F;&#x6709;&#x8FD9;&#x79CD;&#x914D;&#x7F6E;&#x7684;&#x3002;&#x4E8E;&#x662F;&#x5728;options&#x641C;&#x7D22;hash&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x914D;&#x7F6E;&#x3002;&#x7EE7;&#x7EED;&#x5728;&#x7F51;&#x4E0A;&#x641C;&#x7D22;&#xFF0C;&#x679C;&#x7136;&#x627E;&#x5230;issue<a href="https://github.com/dimsemenov/PhotoSwipe/issues/1172" rel="noopener external nofollow noreferrer" target="_blank">Remove hash change</a>&#xFF0C;&#x8BF4;&#x5C06;history&#x914D;&#x7F6E;&#x5173;&#x95ED;&#x5C31;&#x884C;&#xFF0C;&#x679C;&#x7136;&#x6210;&#x529F;&#x4E86;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;hestory&#x7684;length&#xFF0C;&#x5B8C;&#x7F8E;&#x3002;</p>
+<!-- <button class='testbtn'>test</button> -->
+<script data-pjax>
+
+    // document.querySelector(".testbtn").onclick = function(){
+    //     //alert('nn123')
+    //     console.log( location.hostname )
+    // }
+    // $(document).ready(function(){
+    //     $(".testbtn").click(function(){
+    //         //initPhotoSwipeFromDOM('.post-body');
+
+    //         //alert(12)
+    //     })
+    // })
+</script>
+<!--
+额外阅读
+[window.open增加noreferrer支持](https://zhuanlan.zhihu.com/p/59648772)
+[使用<a>标签时，你可能会忽略的一个安全问题](https://juejin.im/post/5c36d52651882525e90dc800)
+[危险的 target="_blank" 与 “opener”](https://juejin.im/post/5a9f8425f265da239a5f57f8)
+[Explained: noopener, noreferrer, and nofollow Values](https://pointjupiter.com/what-noopener-noreferrer-nofollow-explained/)
+[Nofollow链接 VS Follow链接：所有你需要了解的知识](https://ahrefs.com/blog/zh/nofollow-links/)
+-->
+<!-- flag of hidden posts -->
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/photoswipe/" rel="tag"><i class="fa fa-tag"></i> photoswipe</a>
+          </div>
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Start"><span class="nav-number">1.</span> <span class="nav-text">Start</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭fancybox"><span class="nav-number">2.</span> <span class="nav-text">关闭fancybox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置photoswipe"><span class="nav-number">3.</span> <span class="nav-text">配置photoswipe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入所需文件"><span class="nav-number">4.</span> <span class="nav-text">引入所需文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义编写功能"><span class="nav-number">5.</span> <span class="nav-text">自定义编写功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果预览"><span class="nav-number">6.</span> <span class="nav-text">效果预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">7.</span> <span class="nav-text">End</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续花絮"><span class="nav-number">8.</span> <span class="nav-text">后续花絮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续二"><span class="nav-number">9.</span> <span class="nav-text">后续二</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ftzz100"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">ftzz100</p>
+  <div class="site-description" itemprop="description">爱多一次，醉多一次</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-lemon"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ftzz100</span>
+</div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <!--<script src="/lib/metingjs/Meting.min.js"></script>-->
+    <script src="/js/Meting.min.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+    <!--aplayer start-->
+    <div class="aplayer no-destroy" 
+    data-id="5014450505" 
+    data-server="netease" 
+    data-type="playlist" 
+    data-fixed="true" 
+    data-autoplay="false" 
+    data-order="list" 
+    data-volume="0.5" 
+    data-theme="#cc543a" 
+    data-preload="auto" >
+    </div>
+    <!--aplayer end-->
+  </div>
+
+  
+    <script src='https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe-ui-default.min.js'></script>
+    <script type="text/javascript" src="/js/image.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  //elements: 'a[href]:not(.headerlink):not([href^="#"]):not([href="javascript:void(0)"])',
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+  //console.log("lm");
+  //pjax_reload()
+  //loadMeting();
+});
+
+//document.addEventListener('pjax:complete', function () {
+    //console.log('complete')
+    //alert("complete")
+    //
+    //pjax_reload();
+    //return false;
+    // $(document).pjax('a[target!=_blank][rel!=group]', '#pjax-container', {
+    //     fragment: '#pjax-container',
+    //     timeout: 1000,
+    // });
+//});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqusjs.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', () => {
+    window.dsqjs = new DisqusJS({
+      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
+      apikey    : 'hlDVq5932DR1fc7c0kaBtsENfBkqcmGJ23C2Pv4lc3AkfFcCvlDhj9CesPwQKpts',
+      shortname : 'ftzzloom-im',
+      url       : "https://ftzz100.github.io/hexo-mix-with-photoswipe/",
+      identifier: "hexo-mix-with-photoswipe/",
+      title     : "更改hexo图片放大方式",
+    });
+  }, window.DisqusJS);
+});
+</script>
+
+    </div>
+</body>
+</html>

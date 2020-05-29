@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.css' rel='stylesheet'/>
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/default-skin/default-skin.min.css' rel='stylesheet'/>
+    <script src='https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ftzz100.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":250,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="&amp;#x770B;&amp;#x5230;&amp;#x5927;&amp;#x4F6C;&amp;#x4EEC;&amp;#x7684;&amp;#x535A;&amp;#x5BA2;&amp;#x53EF;&amp;#x4EE5;&amp;#x64AD;&amp;#x653E;&amp;#x97F3;&amp;#x4E50;&amp;#xFF0C;&amp;#x4E0D;&amp;#x5F97;&amp;#x4E0D;&amp;#x8BF4;&amp;#x6211;&amp;#x1F34B;&amp;#x1F34B;&amp;#x1F34B;&amp;#x4E86;&amp;#">
+<meta name="keywords" content="hexo,aplayer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给Hexo添加音乐播放器插件">
+<meta property="og:url" content="https://ftzz100.github.io/hexo-add-aplayer-plugins/index.html">
+<meta property="og:site_name" content="Freemon">
+<meta property="og:description" content="&amp;#x770B;&amp;#x5230;&amp;#x5927;&amp;#x4F6C;&amp;#x4EEC;&amp;#x7684;&amp;#x535A;&amp;#x5BA2;&amp;#x53EF;&amp;#x4EE5;&amp;#x64AD;&amp;#x653E;&amp;#x97F3;&amp;#x4E50;&amp;#xFF0C;&amp;#x4E0D;&amp;#x5F97;&amp;#x4E0D;&amp;#x8BF4;&amp;#x6211;&amp;#x1F34B;&amp;#x1F34B;&amp;#x1F34B;&amp;#x4E86;&amp;#">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ftzz100.github.io/hexo-add-aplayer-plugins/CD1100280515.png">
+<meta property="og:updated_time" content="2020-05-23T07:46:23.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="给Hexo添加音乐播放器插件">
+<meta name="twitter:description" content="&amp;#x770B;&amp;#x5230;&amp;#x5927;&amp;#x4F6C;&amp;#x4EEC;&amp;#x7684;&amp;#x535A;&amp;#x5BA2;&amp;#x53EF;&amp;#x4EE5;&amp;#x64AD;&amp;#x653E;&amp;#x97F3;&amp;#x4E50;&amp;#xFF0C;&amp;#x4E0D;&amp;#x5F97;&amp;#x4E0D;&amp;#x8BF4;&amp;#x6211;&amp;#x1F34B;&amp;#x1F34B;&amp;#x1F34B;&amp;#x4E86;&amp;#">
+<meta name="twitter:image" content="https://ftzz100.github.io/hexo-add-aplayer-plugins/CD1100280515.png">
+
+<link rel="canonical" href="https://ftzz100.github.io/hexo-add-aplayer-plugins/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>给Hexo添加音乐播放器插件 | Freemon</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167084562-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167084562-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Freemon</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-reading">
+
+    <a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>Reading</a>
+
+  </li>
+        <li class="menu-item menu-item-friends">
+
+    <a href="/friends" rel="section"><i class="fa fa-link fa-fw"></i>Friends</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ftzz100.github.io/hexo-add-aplayer-plugins/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ftzz100">
+      <meta itemprop="description" content="爱多一次，醉多一次">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemon">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          给Hexo添加音乐播放器插件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-11 11:22:02" itemprop="dateCreated datePublished" datetime="2020-05-11T11:22:02+08:00">2020-05-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <!-- hexo有很多插件，博客里使用了一些，聊以记之。 -->
+
+
+<p>&#x770B;&#x5230;&#x5927;&#x4F6C;&#x4EEC;&#x7684;&#x535A;&#x5BA2;&#x53EF;&#x4EE5;&#x64AD;&#x653E;&#x97F3;&#x4E50;&#xFF0C;&#x4E0D;&#x5F97;&#x4E0D;&#x8BF4;&#x6211;&#x1F34B;&#x1F34B;&#x1F34B;&#x4E86;&#x3002;&#x4E8E;&#x662F;&#x4E5F;&#x6765;&#x5F04;&#x4E00;&#x4E2A;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x5668;&#xFF0C;&#x771F;&#x9999;&#xFF5E;</p>
+<a id="more"></a>
+
+<h3 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h3><p>&#x9996;&#x5148;&#x5B89;&#x88C5;&#x97F3;&#x4E50;&#x63D2;&#x4EF6;<code>hexo-tag-aplayer</code>,APlayer&#x662F;&#x4E00;&#x6B3E;HTML5&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x5668;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install aplayer --save</span><br></pre></td></tr></table></figure>
+
+<p>&#x5728;&#x9875;&#x9762;&#x6DFB;&#x52A0;&#x64AD;&#x653E;&#x5668;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x4E0B;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% aplayer title author url [picture_url, narrow, autoplay, <span class="attr">width</span>:xxx, <span class="attr">lrc</span>:xxx] %}</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>&#x6B4C;&#x66F2;&#x6807;&#x9898;</td>
+</tr>
+<tr>
+<td>author</td>
+<td>&#x6B4C;&#x66F2;&#x4F5C;&#x8005;</td>
+</tr>
+<tr>
+<td>url</td>
+<td>&#x97F3;&#x4E50;&#x6587;&#x4EF6;URL&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>picture_url</td>
+<td>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x5C01;&#x9762;&#x56FE;&#x7247;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>narrow</td>
+<td>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x64AD;&#x653E;&#x5668;&#x8896;&#x73CD;&#x98CE;&#x683C;</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x81EA;&#x52A8;&#x64AD;&#x653E;&#xFF0C;&#x79FB;&#x52A8;&#x7AEF;&#x6D4F;&#x89C8;&#x5668;&#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;&#x6B64;&#x529F;&#x80FD;</td>
+</tr>
+<tr>
+<td>width</td>
+<td>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x64AD;&#x653E;&#x5668;&#x5BBD;&#x5EA6; (&#x9ED8;&#x8BA4;: 100%)</td>
+</tr>
+<tr>
+<td>lrc</td>
+<td>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x6B4C;&#x8BCD;&#x6587;&#x4EF6; URL &#x5730;&#x5740;</td>
+</tr>
+</tbody></table>
+<!-- <font face="楷体" size="3" color="#26453D">强烈推荐刷新一下这个页面，会加载实例，骗人的</font> -->
+
+<h3 id="&#x5355;&#x66F2;&#x5B9E;&#x4F8B;"><a href="#&#x5355;&#x66F2;&#x5B9E;&#x4F8B;" class="headerlink" title="&#x5355;&#x66F2;&#x5B9E;&#x4F8B;"></a>&#x5355;&#x66F2;&#x5B9E;&#x4F8B;</h3><div id="danqu"></div>
+
+
+<figure class="highlight js"><figcaption><span>&#x5355;&#x66F2;&#x5177;&#x4F53;&#x4EE3;&#x7801;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">{% aplayer </span><br><span class="line"><span class="string">&quot;&#x5149;&#x308B;&#x306A;&#x3089;&quot;</span> </span><br><span class="line"><span class="string">&quot;Goose house&quot;</span> </span><br><span class="line"><span class="string">&quot;https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.mp3&quot;</span> </span><br><span class="line"><span class="string">&quot;https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.jpg&quot;</span> </span><br><span class="line"><span class="string">&quot;lrc:https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.lrc&quot;</span> </span><br><span class="line"><span class="string">&quot;width:100%&quot;</span> </span><br><span class="line">%}</span><br></pre></td></tr></table></figure>
+
+<p>&#x6B4C;&#x66F2;&#x6587;&#x4EF6;&#xFF0C;&#x6B4C;&#x66F2;&#x5C01;&#x9762;&#x90FD;&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x672C;&#x5730;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x672C;&#x5730;lrc&#x6B4C;&#x8BCD;&#x5F15;&#x7528;&#x603B;&#x662F;&#x62A5;&#x9519;&#xFF0C;&#x7528;&#x5728;&#x7EBF;&#x5730;&#x5740;&#x7684;&#x5C31;&#x53EF;&#x4EE5;&#x3002;&#x5F15;&#x7528;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x64AD;&#x653E;&#x5668;&#x7684;&#x6B4C;&#x66F2;&#x64AD;&#x653E;&#x65F6;&#x95F4;&#x4E0E;&#x603B;&#x65F6;&#x5E38;&#x4E0D;&#x80FD;&#x663E;&#x793A;&#x3002;&#x6240;&#x4EE5;&#x6700;&#x597D;&#x90FD;&#x7528;&#x5916;&#x94FE;&#x3002;</p>
+<h3 id="&#x6B4C;&#x5355;&#x5B9E;&#x4F8B;"><a href="#&#x6B4C;&#x5355;&#x5B9E;&#x4F8B;" class="headerlink" title="&#x6B4C;&#x5355;&#x5B9E;&#x4F8B;"></a>&#x6B4C;&#x5355;&#x5B9E;&#x4F8B;</h3><div id="songlist"></div>
+
+<figure class="highlight js"><figcaption><span>&#x6B4C;&#x5355;&#x683C;&#x5F0F;&#x53CA;&#x5177;&#x4F53;&#x4F8B;&#x5B50;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">{% aplayerlist %}</span><br><span class="line">{</span><br><span class="line">    <span class="string">&quot;narrow&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">&quot;autoplay&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">&quot;mode&quot;</span>: <span class="string">&quot;random&quot;</span>,<span class="comment">//&#xFF08;&#x53EF;&#x9009;&#xFF09;&apos;random&apos;, &apos;single&apos; (&#x5355;&#x66F2;&#x64AD;&#x653E;), &apos;circulation&apos; (&#x5FAA;&#x73AF;&#x64AD;&#x653E;), &apos;order&apos; (&#x5217;&#x8868;&#x64AD;&#x653E;)&#xFF0C; &#x9ED8;&#x8BA4;&#xFF1A;&apos;circulation&apos; </span></span><br><span class="line">    <span class="string">&quot;showlrc&quot;</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">&quot;mutex&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">&quot;theme&quot;</span>: <span class="string">&quot;#e6d0b2&quot;</span>,</span><br><span class="line">    <span class="string">&quot;preload&quot;</span>: <span class="string">&quot;metadata&quot;</span>,</span><br><span class="line">    <span class="string">&quot;listmaxheight&quot;</span>: <span class="string">&quot;513px&quot;</span>,</span><br><span class="line">    <span class="string">&quot;music&quot;</span>: [</span><br><span class="line">        {</span><br><span class="line">            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;&#x524D;&#x524D;&#x524D;&#x4E16;&quot;</span>,</span><br><span class="line">            <span class="string">&quot;author&quot;</span>: <span class="string">&quot;RADWIMPS&quot;</span>,</span><br><span class="line">            <span class="string">&quot;url&quot;</span>: <span class="string">&quot;https://cn-south-17-aplayer-46154810.oss.dogecdn.com/yourname.mp3&quot;</span>,</span><br><span class="line">            <span class="string">&quot;pic&quot;</span>: <span class="string">&quot;https://cn-south-17-aplayer-46154810.oss.dogecdn.com/yourname.jpg&quot;</span>,</span><br><span class="line">            <span class="string">&quot;lrc&quot;</span>: <span class="string">&quot;https://cn-south-17-aplayer-46154810.oss.dogecdn.com/yourname.lrc&quot;</span></span><br><span class="line">        },</span><br><span class="line">        {</span><br><span class="line">            <span class="string">&quot;title&quot;</span>: <span class="string">&quot;&#x5149;&#x308B;&#x306A;&#x3089;&quot;</span>,</span><br><span class="line">            <span class="string">&quot;author&quot;</span>: <span class="string">&quot;Goose house&quot;</span>,</span><br><span class="line">            <span class="string">&quot;url&quot;</span>: <span class="string">&quot;https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.mp3&quot;</span>,</span><br><span class="line">            <span class="string">&quot;pic&quot;</span>: <span class="string">&quot;https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.jpg&quot;</span>,</span><br><span class="line">            <span class="string">&quot;lrc&quot;</span>: <span class="string">&quot;https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.lrc&quot;</span></span><br><span class="line">        }</span><br><span class="line">    ]</span><br><span class="line">}</span><br><span class="line">{% endaplayerlist %}</span><br></pre></td></tr></table></figure>
+
+<h4 id="MetingJS&#x652F;&#x6301;"><a href="#MetingJS&#x652F;&#x6301;" class="headerlink" title="MetingJS&#x652F;&#x6301;"></a>MetingJS&#x652F;&#x6301;</h4><blockquote>
+<p><font face="&#x6977;&#x4F53;" size="3" color="#26453D">MetingJS&#x662F;&#x57FA;&#x4E8E;Meting API&#x7684;APlayer&#x884D;&#x751F;&#x64AD;&#x653E;&#x5668;</font></p>
+</blockquote>
+<p>&#x901A;&#x8FC7;&#x5F15;&#x5165;<code>MetingJS</code>&#xFF0C;&#x64AD;&#x653E;&#x5668;&#x5C06;&#x652F;&#x6301;QQ&#x97F3;&#x4E50;&#x3001;&#x7F51;&#x6613;&#x4E91;&#x97F3;&#x4E50;&#x3001;&#x867E;&#x7C73;&#x3001;&#x9177;&#x72D7;&#x3001;&#x767E;&#x5EA6;&#x7B49;&#x5E73;&#x53F0;&#x7684;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x3002;<br>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#x6DFB;&#x52A0;&#x5728;&#x7EBF;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x5217;&#x8868;&#x3002;&#x5F15;&#x5165;&#x9700;&#x8981;&#x5728;Hexo&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>_config.yml</code>&#x4E2D;&#x8BBE;&#x7F6E;</p>
+<figure class="highlight"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aplayer:</span><br><span class="line">  meting: true # MetingJS &#x652F;&#x6301;</span><br><span class="line">  asset_inject: true # &#x81EA;&#x52A8;&#x63D2;&#x5165;Aplayer.js&#x4E0E;Meting.js&#x8D44;&#x6E90;&#x811A;&#x672C;&#xFF08;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#xFF09;</span><br></pre></td></tr></table></figure>
+
+<p>&#x8BBE;&#x7F6E;&#x540E;&#x9875;&#x9762;&#x5728;&#x521D;&#x59CB;&#x5316;&#x64AD;&#x653E;&#x5668;&#x65F6;&#x4F1A;&#x5F15;&#x5165;1.2.0&#x7248;&#x672C;&#x7684;<code>Meting.min.js</code>&#x6587;&#x4EF6;<br>&#x6CE8;&#x610F;&#x4E0D;&#x662F;&#x5728;&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>_config.yml</code>&#x8BBE;&#x7F6E;&#xFF0C;&#x8BBE;&#x7F6E;&#x540E;&#x8981;&#x91CD;&#x542F;hexo&#x670D;&#x52A1;&#x624D;&#x80FD;&#x751F;&#x6548;</p>
+<!-- 2. 启动MetingJS后，之前的APlayer播放器会无法显示 -->
+
+<h3 id="Meting&#x7684;&#x683C;&#x5F0F;"><a href="#Meting&#x7684;&#x683C;&#x5F0F;" class="headerlink" title="Meting&#x7684;&#x683C;&#x5F0F;"></a>Meting&#x7684;&#x683C;&#x5F0F;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% meting <span class="string">&quot;id&quot;</span> <span class="string">&quot;server&quot;</span> <span class="string">&quot;type&quot;</span>%}</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>&#x9009;&#x9879;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>&#x5FC5;&#x987B;&#x503C;</td>
+<td>&#x6B4C;&#x66F2; id / &#x64AD;&#x653E;&#x5217;&#x8868; id / &#x76F8;&#x518C; id / &#x641C;&#x7D22;&#x5173;&#x952E;&#x5B57;</td>
+</tr>
+<tr>
+<td>server</td>
+<td>&#x5FC5;&#x987B;&#x503C;</td>
+<td>&#x97F3;&#x4E50;&#x5E73;&#x53F0;: netease, tencent, kugou, xiami, baidu</td>
+</tr>
+<tr>
+<td>type</td>
+<td>&#x5FC5;&#x987B;&#x503C;</td>
+<td>song, playlist, album, search, artist</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>false</td>
+<td>&#x5F00;&#x542F;&#x56FA;&#x5B9A;&#x6A21;&#x5F0F;</td>
+</tr>
+<tr>
+<td>mini</td>
+<td>false</td>
+<td>&#x5F00;&#x542F;&#x8FF7;&#x4F60;&#x6A21;&#x5F0F;</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>all</td>
+<td>&#x5217;&#x8868;&#x5FAA;&#x73AF;&#x6A21;&#x5F0F;&#xFF1A;all, one,none</td>
+</tr>
+<tr>
+<td>order</td>
+<td>list</td>
+<td>&#x5217;&#x8868;&#x64AD;&#x653E;&#x6A21;&#x5F0F;&#xFF1A; list, random</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>0.7</td>
+<td>&#x64AD;&#x653E;&#x5668;&#x97F3;&#x91CF;</td>
+</tr>
+<tr>
+<td>lrctype</td>
+<td>0</td>
+<td>&#x6B4C;&#x8BCD;&#x683C;&#x5F0F;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>listfolded</td>
+<td>false</td>
+<td>&#x6307;&#x5B9A;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x5217;&#x8868;&#x662F;&#x5426;&#x6298;&#x53E0;</td>
+</tr>
+<tr>
+<td>storagename</td>
+<td>metingjs</td>
+<td>LocalStorage &#x4E2D;&#x5B58;&#x50A8;&#x64AD;&#x653E;&#x5668;&#x8BBE;&#x5B9A;&#x7684;&#x952E;&#x540D;</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>true</td>
+<td>&#x81EA;&#x52A8;&#x64AD;&#x653E;&#xFF0C;&#x79FB;&#x52A8;&#x7AEF;&#x6D4F;&#x89C8;&#x5668;&#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;&#x6B64;&#x529F;&#x80FD;</td>
+</tr>
+<tr>
+<td>mutex</td>
+<td>true</td>
+<td>&#x8BE5;&#x9009;&#x9879;&#x5F00;&#x542F;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x540C;&#x9875;&#x9762;&#x6709;&#x5176;&#x4ED6; aplayer &#x64AD;&#x653E;&#xFF0C;&#x8BE5;&#x64AD;&#x653E;&#x5668;&#x4F1A;&#x6682;&#x505C;</td>
+</tr>
+<tr>
+<td>listmaxheight</td>
+<td>340px</td>
+<td>&#x64AD;&#x653E;&#x5217;&#x8868;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>auto</td>
+<td>&#x97F3;&#x4E50;&#x6587;&#x4EF6;&#x9884;&#x8F7D;&#x5165;&#x6A21;&#x5F0F;&#xFF0C;&#x53EF;&#x9009;&#x9879;&#xFF1A; none, metadata, auto</td>
+</tr>
+<tr>
+<td>theme</td>
+<td>#ad7a86</td>
+<td>&#x64AD;&#x653E;&#x5668;&#x98CE;&#x683C;&#x8272;&#x5F69;&#x8BBE;&#x7F6E;</td>
+</tr>
+</tbody></table>
+<h3 id="MetingJS&#x5355;&#x66F2;"><a href="#MetingJS&#x5355;&#x66F2;" class="headerlink" title="MetingJS&#x5355;&#x66F2;"></a>MetingJS&#x5355;&#x66F2;</h3><figure class="highlight js"><figcaption><span>&#x5355;&#x66F2;Code</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% meting <span class="string">&quot;1330348068&quot;</span> <span class="string">&quot;netease&quot;</span> <span class="string">&quot;song&quot;</span>  <span class="string">&quot;theme: #1da496&quot;</span> %}</span><br></pre></td></tr></table></figure>
+
+
+    <div id="aplayer-ryXVrNLB" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1330348068" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme=" #1da496"></div>
+
+<h3 id="MetingJS&#x6B4C;&#x5355;"><a href="#MetingJS&#x6B4C;&#x5355;" class="headerlink" title="MetingJS&#x6B4C;&#x5355;"></a>MetingJS&#x6B4C;&#x5355;</h3><figure class="highlight js"><figcaption><span>&#x64AD;&#x653E;&#x5217;&#x8868;Code</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% meting <span class="string">&quot;387465322&quot;</span> <span class="string">&quot;netease&quot;</span> <span class="string">&quot;playlist&quot;</span> <span class="string">&quot;&quot;</span> <span class="string">&quot;mutex: false&quot;</span> <span class="string">&quot;listmaxheight: 340px&quot;</span> <span class="string">&quot;preload: none&quot;</span> <span class="string">&quot;theme: #ad7a86&quot;</span> %}</span><br></pre></td></tr></table></figure>
+
+
+    <div id="aplayer-FTuVGzYW" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="536796669" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="false" data-listmaxheight=" 340px" data-preload=" none" data-theme=" #ad7a86" data-lrctype="1"></div>
+
+
+<h3 id="&#x64AD;&#x653E;&#x5668;&#x5438;&#x5E95;&#x6A21;&#x5F0F;"><a href="#&#x64AD;&#x653E;&#x5668;&#x5438;&#x5E95;&#x6A21;&#x5F0F;" class="headerlink" title="&#x64AD;&#x653E;&#x5668;&#x5438;&#x5E95;&#x6A21;&#x5F0F;"></a>&#x64AD;&#x653E;&#x5668;&#x5438;&#x5E95;&#x6A21;&#x5F0F;</h3><p>&#x53EF;&#x4EE5;&#x5C06;&#x64AD;&#x653E;&#x5668;&#x7F29;&#x5C0F;&#x5728;&#x5DE6;&#x4E0B;&#x89D2;&#xFF0C;&#x4E5F;&#x79F0;&#x4F5C;&#x201C;&#x5438;&#x5E95;&#x6A21;&#x5F0F;&#x201D;<br>&#x5982;&#x679C;&#x5728;&#x6587;&#x7AE0;&#x4E2D;&#x5C06;&#x64AD;&#x653E;&#x5668;&#x7684;&#x53C2;&#x6570;fixed&#x6FC0;&#x6D3B;&#xFF0C;&#x53EA;&#x4F1A;&#x56FA;&#x5B9A;&#x5728;&#x6587;&#x7AE0;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x8981;&#x5C06;&#x5176;&#x653E;&#x5728;&#x6587;&#x7AE0;&#x5916;&#xFF0C;&#x5373;&#x535A;&#x5BA2;&#x7684;&#x5DE6;&#x4E0B;&#x89D2;&#xFF0C;&#x9700;&#x8981;&#x53E6;&#x5916;&#x4FEE;&#x6539;&#x9875;&#x9762;&#x4EE3;&#x7801;&#x3002;<br>&#x6253;&#x5F00;<code>themes/next/layout/_layout.swig</code>&#x6587;&#x4EF6;&#xFF0C;&#x5728;body&#x6807;&#x7B7E;&#x91CC;&#x9762;&#x7684;&#x6700;&#x540E;&#x5904;&#x52A0;&#x5165;aplyer&#x7684;&#x5B9E;&#x4F8B;html&#x4EE3;&#x7801;</p>
+<figure class="highlight html"><figcaption><span>themes/next/layout/_layout.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aplayer&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-id</span>=<span class="string">&quot;387465322&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-server</span>=<span class="string">&quot;netease&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-type</span>=<span class="string">&quot;playlist&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-fixed</span>=<span class="string">&quot;true&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-autoplay</span>=<span class="string">&quot;false&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-order</span>=<span class="string">&quot;list&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-volume</span>=<span class="string">&quot;0.5&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-theme</span>=<span class="string">&quot;#1da496&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-preload</span>=<span class="string">&quot;auto&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x5728;footer&#x6216;&#x8005;header&#x5F15;&#x5165;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;<code>Aplayer.js</code>&#x548C;<code>Meting.js</code>&#xFF0C;metingjs&#x4F9D;&#x8D56;aplayerjs&#xFF0C;&#x6240;&#x4EE5;&#x8BF7;&#x6CE8;&#x610F;&#x987A;&#x5E8F;</p>
+<figure class="highlight html"><figcaption><span>themes/next/layout/_partials/footer.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x6CE8;&#x610F;&#x5F15;&#x5165;&#x7684;metingjs&#x7248;&#x672C;&#x5F97;&#x662F;1.2.0&#x7684;&#xFF0C;&#x6700;&#x65B0;&#x7248;&#x672C;2.0.0&#x4E0E;APlayer&#x4E0D;&#x517C;&#x5BB9;&#x3002;&#x770B;hexo-tag-aplayer&#x7684;github&#x4ED3;&#x5E93;&#x4E24;&#x5E74;&#x524D;&#x66F4;&#x65B0;&#x540E;&#x5C31;&#x6CA1;&#x52A8;&#x4E86;&#xFF0C;&#x53EA;&#x652F;&#x6301;&#x5230;metingjs&#x7684;v1.2.0<br><a href="https://github.com/MoePlayer/hexo-tag-aplayer" rel="noopener external nofollow noreferrer" target="_blank">hexo-tag-aplayer</a><br><a href="https://github.com/metowolf/MetingJS" rel="noopener external nofollow noreferrer" target="_blank">metingjs&#x6587;&#x6863;</a></p>
+<p>&#x56E0;&#x4E3A;&#x5728;&#x4E3B;&#x9898;&#x6587;&#x4EF6;&#x4E2D;&#x624B;&#x52A8;&#x52A0;&#x5165;&#x4E86;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5728;hexo&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x5173;&#x95ED;&#x63D2;&#x4EF6;&#x7684;&#x81EA;&#x52A8;&#x811A;&#x672C;&#x63D2;&#x5165;&#x529F;&#x80FD;&#xFF1A;</p>
+<figure class="highlight"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aplayer:</span><br><span class="line">  meting: <span class="literal">true</span></span><br><span class="line">  asset_inject: false # &#x5173;&#x95ED;&#x81EA;&#x52A8;&#x811A;&#x672C;&#x63D2;&#x5165;</span><br></pre></td></tr></table></figure>
+
+<p>&#x91CD;&#x542F;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x770B;&#x5230;&#x9996;&#x9875;&#x51FA;&#x73B0;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;&#x64AD;&#x653E;&#x5668;&#x4E86;&#x3002;</p>
+<h3 id="&#x5F15;&#x5165;pjax&#x5B9E;&#x73B0;&#x5168;&#x5C40;&#x64AD;&#x653E;"><a href="#&#x5F15;&#x5165;pjax&#x5B9E;&#x73B0;&#x5168;&#x5C40;&#x64AD;&#x653E;" class="headerlink" title="&#x5F15;&#x5165;pjax&#x5B9E;&#x73B0;&#x5168;&#x5C40;&#x64AD;&#x653E;"></a>&#x5F15;&#x5165;pjax&#x5B9E;&#x73B0;&#x5168;&#x5C40;&#x64AD;&#x653E;</h3><p>&#x5F53;&#x8FDB;&#x5165;&#x5176;&#x4ED6;&#x9875;&#x9762;&#x65F6;&#xFF0C;&#x5438;&#x5E95;&#x64AD;&#x653E;&#x5668;&#x4F1A;&#x88AB;&#x6253;&#x65AD;&#x3002;&#x8981;&#x5B9E;&#x73B0;&#x97F3;&#x4E50;&#x7684;&#x4E0D;&#x95F4;&#x65AD;&#x64AD;&#x653E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5168;&#x5C40;&#x97F3;&#x4E50;&#x6548;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;pjax&#x3002;Next&#x4E3B;&#x9898;&#x5DF2;&#x7ECF;&#x81EA;&#x5E26;&#x4E86;<a href="https://github.com/MoOx/pjax" rel="noopener external nofollow noreferrer" target="_blank">MoOx/pjax</a>&#xFF0C;&#x53EF;&#x624B;&#x52A8;&#x5F00;&#x542F;&#x3002;<br>&#x5728;&#x4E3B;&#x9898;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;<code>_config.yml</code>&#x4E2D;&#x5C06;pjax&#x8BBE;&#x7F6E;&#x4E3A;true&#xFF0C;&#x5E76;&#x4E14;&#x627E;&#x5230;&#x4E0B;&#x9762;&#x4E00;&#x53E5;&#xFF0C;&#x5C06;&#x91CC;&#x9762;&#x7684;&#x6CE8;&#x91CA;&#x53BB;&#x6389;&#xFF0C;&#x5F15;&#x5165;cdn&#x8D44;&#x6E90;&#x3002;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># pjax: //cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x6837;&#x8DF3;&#x8F6C;&#x5230;&#x5176;&#x4ED6;&#x9875;&#x9762;&#x5C31;&#x4E0D;&#x4F1A;&#x6253;&#x65AD;&#x9996;&#x9875;&#x7684;&#x64AD;&#x653E;&#x5668;&#x4E86;&#x3002;</p>
+<h3 id="&#x8FDB;&#x9636;"><a href="#&#x8FDB;&#x9636;" class="headerlink" title="&#x8FDB;&#x9636;"></a>&#x8FDB;&#x9636;</h3><p>&#x5F15;&#x5165;pjax&#x540E;&#x4F1A;&#x4E0E;&#x4E0D;&#x5C11;&#x529F;&#x80FD;&#x51B2;&#x7A81;&#x4E86;&#xFF0C;&#x6BD4;&#x5982;&#x56FE;&#x7247;&#x653E;&#x5927;&#xFF0C;&#x6587;&#x7AE0;&#x9875;&#x9762;&#x91CC;&#x7684;aplayer&#x65E0;&#x6CD5;&#x521D;&#x59CB;&#x5316;&#x7B49;<br>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5C40;&#x90E8;&#x9875;&#x9762;&#x66FF;&#x6362;&#xFF0C;&#x91CC;&#x9762;&#x7684;js&#x6CA1;&#x6709;&#x6267;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x5F88;&#x591A;&#x6D89;&#x53CA;&#x5230;js&#x7684;&#x529F;&#x80FD;&#x5C31;&#x5F02;&#x5E38;&#x4E86;&#x3002;<br>&#x4E3A;&#x89E3;&#x51B3;&#x6587;&#x7AE0;&#x9875;&#x9762;&#x7684;APlayer&#x7684;&#x521D;&#x59CB;&#x5316;&#x5F02;&#x5E38;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x5728;&#x8FDB;&#x5165;&#x6709;&#x64AD;&#x653E;&#x5668;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6B64;&#x65F6;&#x6B63;&#x597D;pjax&#x6267;&#x884C;&#x6210;&#x529F;&#xFF0C;&#x53EF;&#x5728;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#x91CC;&#x6267;&#x884C;metingjs&#x7684;&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x6837;&#x9875;&#x9762;&#x7684;&#x64AD;&#x653E;&#x5668;&#x5C31;&#x80FD;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;&#x3002;<br>&#x4ECE;metingjs&#x7684;<a href="https://github.com/metowolf/MetingJS/blob/v1.2/src/Meting.js" rel="noopener external nofollow noreferrer" target="_blank">1.2.0&#x6E90;&#x7801;</a>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x91CC;&#x9762;&#x6709;<code>loadMeting()</code>&#x7684;&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#x3002;<br>&#x6240;&#x4EE5;&#x5728;pjax&#x7684;success&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#x91CC;&#x4EE5;&#x53CA;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x8C03;&#x7528;&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#x3002;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">&apos;pjax:success&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    loadMeting();</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    loadMeting();</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<p>&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x517C;&#x5BB9;pjax&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x8DDF;&#x8FD9;&#x4E2A;&#x5927;&#x540C;&#x5C0F;&#x5F02;&#xFF0C;&#x4E5F;&#x662F;&#x5148;&#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x91CC;&#x518D;&#x4E24;&#x8FB9;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x6DFB;&#x52A0;js&#x540E;&#x8FDB;&#x5165;&#x6709;&#x64AD;&#x653E;&#x5668;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x521D;&#x59CB;&#x5316;&#x540E;&#x7684;&#x64AD;&#x653E;&#x5668;&#x4E86;&#x3002;&#x4F46;&#x662F;&#x53C8;&#x6709;&#x65B0;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;&#x5168;&#x5C40;&#x64AD;&#x653E;&#x5668;&#x4F1A;&#x88AB;&#x4E2D;&#x65AD;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;<code>loadMeting()</code>&#x51FD;&#x6570;&#x9ED8;&#x8BA4;&#x4F1A;&#x91CD;&#x8F7D;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x64AD;&#x653E;&#x5668;&#xFF0C;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;&#x5168;&#x5C40;&#x64AD;&#x653E;&#x5668;&#x4E5F;&#x4F1A;&#x88AB;&#x5F71;&#x54CD;&#x5230;&#x3002;</p>
+<p>&#x8FD9;&#x95EE;&#x9898;&#x73B0;&#x5728;MetingJS&#x5DF2;&#x7ECF;&#x66F4;&#x65B0;&#x4E86;&#x89E3;&#x51B3;&#x4EE3;&#x7801;<a href="https://github.com/metowolf/MetingJS/releases" rel="noopener external nofollow noreferrer" target="_blank">github releases</a>&#xFF1A;</p>
+<blockquote>
+<p>&#x5F53;&#x64AD;&#x653E;&#x5668;&#x7684;&#x5BB9;&#x5668;&#x5E26;&#x6709; no-destroy &#x7C7B;&#x65F6;&#x8BE5;&#x64AD;&#x653E;&#x5668;&#x4E0D;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;&#x4E0E;&#x91CD;&#x8F7D;&#xFF0C;&#x9002;&#x5408;&#x4E0D;&#x95F4;&#x65AD;&#x64AD;&#x653E;&#x7684;&#x5168;&#x7AD9;&#x64AD;&#x653E;&#x5668;&#x4F7F;&#x7528;</p>
+</blockquote>
+<p>&#x6240;&#x4EE5;&#x5728;&#x5DE6;&#x4E0B;&#x89D2;&#x5438;&#x5E95;&#x64AD;&#x653E;&#x5668;&#x6807;&#x7B7E;&#x4EE3;&#x7801;&#x4E2D;&#x52A0;&#x5165;<code>no-destroy</code>&#x7C7B;&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x6301;&#x4E0D;&#x88AB;&#x9500;&#x6BC1;&#x3002;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aplayer no-destroy&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;xxx&quot;</span><span class="attr">...</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4E0A;&#x9762;&#x5F15;&#x5165;&#x7684;&#x662F;jsdelivr&#x7684;1.2.0 Meting.min.js&#xFF0C;&#x91CC;&#x9762;&#x5E76;&#x6CA1;&#x6709;&#x66F4;&#x65B0;<code>no-destroy</code>&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x65B0;&#x6E90;&#x7801;<a href="https://github.com/metowolf/MetingJS/blob/v1.2/src/Meting.js" rel="noopener external nofollow noreferrer" target="_blank">&#x65B0;1.2.0&#x6E90;&#x7801;</a>&#x4FDD;&#x5B58;&#x5728;&#x672C;&#x5730;&#x76F4;&#x63A5;&#x5F15;&#x7528;</p>
+<figure class="highlight html"><figcaption><span>themes/next/layout/_partials/footer.swig</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--&#x4E0A;&#x9762;&#x7684;&#x4F9D;&#x8D56;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/js/Meting.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x6700;&#x540E;&#x91CD;&#x542F;hexo&#x670D;&#x52A1;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean &amp;&amp; heax g &amp;&amp; hexo s</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x5C31;&#x8FD9;&#xFF1F;&#x662F;&#x7684;&#xFF0C;&#x5C31;&#x8FD9;&#x6837;&#x89E3;&#x51B3;&#x4E86;</p>
+<h3 id="&#x65E0;&#x5173;&#x75DB;&#x75D2;&#x7684;&#x5F02;&#x5E38;"><a href="#&#x65E0;&#x5173;&#x75DB;&#x75D2;&#x7684;&#x5F02;&#x5E38;" class="headerlink" title="&#x65E0;&#x5173;&#x75DB;&#x75D2;&#x7684;&#x5F02;&#x5E38;"></a>&#x65E0;&#x5173;&#x75DB;&#x75D2;&#x7684;&#x5F02;&#x5E38;</h3><p>&#x9875;&#x9762;&#x6709;&#x64AD;&#x653E;&#x5668;&#xFF0C;&#x53EF;&#x53D1;&#x73B0;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x62A5;&#x9519;&#xFF1A;<code>Cannot read property &apos;classList&apos; of undefined</code></p>
+<p><img src="/hexo-add-aplayer-plugins/CD1100280515.png" alt></p>
+<p>&#x8FD9;&#x62A5;&#x9519;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x4F7F;&#x7528;&#xFF0C;&#x90A3;&#x771F;&#x5C31;&#x65E0;&#x89C6;&#x5457;&#x3002;&#x62B1;&#x6B49;&#xFF0C;&#x641E;&#x8D77;&#xFF5E;<br>&#x70B9;&#x8FDB;<code>list.js</code>&#x53EF;&#x770B;&#x5230;&#x5F02;&#x5E38;&#x7684;&#x4EE3;&#x7801;&#x5177;&#x4F53;&#x662F;</p>
+<figure class="highlight js"><figcaption><span>list.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.player.container.querySelectorAll(<span class="string">&apos;.aplayer-list li&apos;</span>)[<span class="keyword">this</span>.index].classList.add(<span class="string">&apos;aplayer-list-light&apos;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x662F;&#x8981;&#x5728;&#x64AD;&#x653E;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6B4C;&#x66F2;&#x4E4B;&#x524D;&#x52A0;&#x9009;&#x4E2D;&#x6837;&#x5F0F;,&#x4F46;&#x662F;&#x627E;&#x4E0D;&#x5230;dom&#x5143;&#x7D20;&#x624D;&#x62A5;&#x9519;&#x3002;&#x53EF;&#x662F;&#x9875;&#x9762;&#x4E2D;&#x5143;&#x7D20;&#x662F;&#x5B58;&#x5728;&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x4E3A;null&#x3002;</p>
+<p>&#x6709;&#x5927;&#x4F6C;&#x6307;&#x51FA;&#x4E86;&#x5177;&#x4F53;&#x539F;&#x56E0;<a href="https://github.com/metowolf/MetingJS/issues/19" rel="noopener external nofollow noreferrer" target="_blank">issues</a>&#xFF1A;</p>
+<blockquote>
+<p>&#x7531;&#x4E8E;&#x5728;pjax&#x5B8C;&#x6210;&#x65F6;Meting&#x4F1A;&#x8C03;&#x7528;APlayer&#x7684;&#x6790;&#x6784;,&#x5176;&#x4F1A;&#x53D6;&#x6D88;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;,&#x5BFC;&#x81F4;&#x5176;&#x7ED1;&#x5B9A;&#x7684;switch&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;,switch&#x51FD;&#x6570;&#x5728;&#x8C03;&#x7528;&#x65F6;&#x4F1A;&#x66F4;&#x65B0;&#x9875;&#x9762;&#x7684;&#x5143;&#x7D20;,&#x800C;pjax&#x6B64;&#x65F6;&#x5DF2;&#x7ECF;&#x5237;&#x65B0;&#x4E86;&#x9875;&#x9762;&#xFF0C;&#x6545;&#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A;undefined&#x7684;&#x5F02;&#x5E38;</p>
+</blockquote>
+<p>&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x89E3;&#x51B3;&#x601D;&#x8DEF;&#xFF1A;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// aplayer &#x662F; new APlayer &#x8FD4;&#x56DE;&#x7684;&#x5BF9;&#x8C61; </span></span><br><span class="line">aplayer.list.index = <span class="literal">undefined</span>;</span><br></pre></td></tr></table></figure>
+
+<p>&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5C31;&#x8981;&#x81EA;&#x5DF1;&#x5199;&#x4E86;&#xFF0C;&#x5176;&#x5B9E;&#x4E0D;&#x96BE;&#x3002;&#x7ED3;&#x5408;meting.js&#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x77E5;&#x9053;&#x6BCF;&#x4E2A;&#x64AD;&#x653E;&#x5668;&#x5BF9;&#x8C61;&#x90FD;&#x5B58;&#x5728;aplayers&#x6570;&#x7EC4;&#x91CC;&#xFF0C;&#x5728;Meting&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x524D;&#x5C06;aplayer&#x7684;&#x5C5E;&#x6027;&#x6539;&#x4E86;&#x5C31;&#x884C;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">&apos;pjax:success&apos;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> aplayers){</span><br><span class="line">        aplayers[i].list.index = <span class="literal">undefined</span>;</span><br><span class="line">    }</span><br><span class="line">    loadMeting(); </span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x8DF3;&#x8FC7;switch&#x51FD;&#x6570;&#xFF0C;&#x4ECE;&#x800C;&#x4E0D;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x4E86;&#x3002;</p>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>&#x6DFB;&#x52A0;&#x8FD9;&#x4E2A;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x5668;&#x8FD8;&#x662F;&#x82B1;&#x4E86;&#x4E00;&#x4E9B;&#x65F6;&#x95F4;&#xFF0C;&#x5BF9;&#x4E8E;&#x6CA1;&#x6709;&#x524D;&#x7AEF;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x7684;&#x6765;&#x8BF4;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x70B9;&#x5403;&#x529B;&#x3002;&#x7279;&#x522B;&#x662F;pjax&#x90E8;&#x5206;&#xFF0C;&#x4E0D;&#x61C2;&#x7684;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF0C;&#x4F1A;&#x6709;&#x5E2E;&#x52A9;&#x7684;&#x3002;</p>
+<h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md" rel="noopener external nofollow noreferrer" target="_blank">hexo-tag-aplayer&#x4E2D;&#x6587;&#x8BF4;&#x660E;&#x6587;&#x6863;</a><br><a href="https://aplayer.js.org/" rel="noopener external nofollow noreferrer" target="_blank">APlayer&#x5B98;&#x65B9;&#x6587;&#x6863;</a><br><a href="https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/" rel="noopener external nofollow noreferrer" target="_blank">&#x4E3A;Hexo&#x535A;&#x5BA2;&#x6DFB;&#x52A0;&#x5168;&#x5C40;APlayer&#x64AD;&#x653E;&#x5668;</a><br><a href="https://github.com/metowolf/MetingJS/pull/6" rel="noopener external nofollow noreferrer" target="_blank">&#x5B8C;&#x5584;loadMeting()</a><br><a href="https://github.com/MoOx/pjax" rel="noopener external nofollow noreferrer" target="_blank">MoOx/pjax&#x5B98;&#x65B9;&#x6587;&#x6863;</a><br><a href="https://inkss.cn/article/other/80b5f235.html" rel="noopener external nofollow noreferrer" target="_blank">Hexo&#x535A;&#x5BA2;&#x90E8;&#x7F72;Pjax&#x5C40;&#x90E8;&#x5237;&#x65B0;</a><br><a href="https://yxyvpn.com/2020/04/15/pjax%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E5%88%9D%E5%A7%8B%E5%8C%96aplayer%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" rel="noopener external nofollow noreferrer" target="_blank">pjax&#x5BFC;&#x81F4;&#x65E0;&#x6CD5;&#x521D;&#x59CB;&#x5316;aplayer&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x5668;</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/aplayer/" rel="tag"><i class="fa fa-tag"></i> aplayer</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/vue-build-error/" rel="prev" title="vue项目build错误解决">
+      <i class="fa fa-chevron-left"></i> vue项目build错误解决
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/hexo-deploy-trouble/" rel="next" title="Hexo部署到GitHub的问题">
+      Hexo部署到GitHub的问题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Start"><span class="nav-number">1.</span> <span class="nav-text">Start</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单曲实例"><span class="nav-number">2.</span> <span class="nav-text">单曲实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#歌单实例"><span class="nav-number">3.</span> <span class="nav-text">歌单实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MetingJS支持"><span class="nav-number">3.1.</span> <span class="nav-text">MetingJS支持</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Meting的格式"><span class="nav-number">4.</span> <span class="nav-text">Meting的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MetingJS单曲"><span class="nav-number">5.</span> <span class="nav-text">MetingJS单曲</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MetingJS歌单"><span class="nav-number">6.</span> <span class="nav-text">MetingJS歌单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#播放器吸底模式"><span class="nav-number">7.</span> <span class="nav-text">播放器吸底模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入pjax实现全局播放"><span class="nav-number">8.</span> <span class="nav-text">引入pjax实现全局播放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶"><span class="nav-number">9.</span> <span class="nav-text">进阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无关痛痒的异常"><span class="nav-number">10.</span> <span class="nav-text">无关痛痒的异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">11.</span> <span class="nav-text">End</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">12.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ftzz100"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">ftzz100</p>
+  <div class="site-description" itemprop="description">爱多一次，醉多一次</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-lemon"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ftzz100</span>
+</div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <!--<script src="/lib/metingjs/Meting.min.js"></script>-->
+    <script src="/js/Meting.min.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+    <!--aplayer start-->
+    <div class="aplayer no-destroy" 
+    data-id="5014450505" 
+    data-server="netease" 
+    data-type="playlist" 
+    data-fixed="true" 
+    data-autoplay="false" 
+    data-order="list" 
+    data-volume="0.5" 
+    data-theme="#cc543a" 
+    data-preload="auto" >
+    </div>
+    <!--aplayer end-->
+  </div>
+
+  
+    <script src='https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe-ui-default.min.js'></script>
+    <script type="text/javascript" src="/js/image.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  //elements: 'a[href]:not(.headerlink):not([href^="#"]):not([href="javascript:void(0)"])',
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+  //console.log("lm");
+  //pjax_reload()
+  //loadMeting();
+});
+
+//document.addEventListener('pjax:complete', function () {
+    //console.log('complete')
+    //alert("complete")
+    //
+    //pjax_reload();
+    //return false;
+    // $(document).pjax('a[target!=_blank][rel!=group]', '#pjax-container', {
+    //     fragment: '#pjax-container',
+    //     timeout: 1000,
+    // });
+//});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqusjs.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', () => {
+    window.dsqjs = new DisqusJS({
+      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
+      apikey    : 'hlDVq5932DR1fc7c0kaBtsENfBkqcmGJ23C2Pv4lc3AkfFcCvlDhj9CesPwQKpts',
+      shortname : 'ftzzloom-im',
+      url       : "https://ftzz100.github.io/hexo-add-aplayer-plugins/",
+      identifier: "hexo-add-aplayer-plugins/",
+      title     : "给Hexo添加音乐播放器插件",
+    });
+  }, window.DisqusJS);
+});
+</script>
+
+    </div>
+</body>
+</html>

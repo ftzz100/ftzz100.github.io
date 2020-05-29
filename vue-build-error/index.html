@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.css' rel='stylesheet'/>
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/default-skin/default-skin.min.css' rel='stylesheet'/>
+    <script src='https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ftzz100.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":250,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="&amp;#x2003;&amp;#x2003;&amp;#x4ECA;&amp;#x5929;&amp;#x670B;&amp;#x53CB;&amp;#x7ED9;&amp;#x6211;&amp;#x4E00;&amp;#x4EFD;vue&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4EE3;&amp;#x7801;&amp;#xFF0C;&amp;#x8BF4;&amp;#x662F;&amp;#x770B;&amp;#x4E0D;&amp;#x61C2;&amp;#xFF0C;&amp;#x4E0D;&amp;#x77E5;&amp;#x90">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue项目build错误解决">
+<meta property="og:url" content="https://ftzz100.github.io/vue-build-error/index.html">
+<meta property="og:site_name" content="Freemon">
+<meta property="og:description" content="&amp;#x2003;&amp;#x2003;&amp;#x4ECA;&amp;#x5929;&amp;#x670B;&amp;#x53CB;&amp;#x7ED9;&amp;#x6211;&amp;#x4E00;&amp;#x4EFD;vue&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4EE3;&amp;#x7801;&amp;#xFF0C;&amp;#x8BF4;&amp;#x662F;&amp;#x770B;&amp;#x4E0D;&amp;#x61C2;&amp;#xFF0C;&amp;#x4E0D;&amp;#x77E5;&amp;#x90">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-05-10T03:06:38.269Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue项目build错误解决">
+<meta name="twitter:description" content="&amp;#x2003;&amp;#x2003;&amp;#x4ECA;&amp;#x5929;&amp;#x670B;&amp;#x53CB;&amp;#x7ED9;&amp;#x6211;&amp;#x4E00;&amp;#x4EFD;vue&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4EE3;&amp;#x7801;&amp;#xFF0C;&amp;#x8BF4;&amp;#x662F;&amp;#x770B;&amp;#x4E0D;&amp;#x61C2;&amp;#xFF0C;&amp;#x4E0D;&amp;#x77E5;&amp;#x90">
+
+<link rel="canonical" href="https://ftzz100.github.io/vue-build-error/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>vue项目build错误解决 | Freemon</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167084562-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167084562-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Freemon</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-reading">
+
+    <a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>Reading</a>
+
+  </li>
+        <li class="menu-item menu-item-friends">
+
+    <a href="/friends" rel="section"><i class="fa fa-link fa-fw"></i>Friends</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ftzz100.github.io/vue-build-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ftzz100">
+      <meta itemprop="description" content="爱多一次，醉多一次">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemon">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vue项目build错误解决
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-09 12:25:10" itemprop="dateCreated datePublished" datetime="2020-05-09T12:25:10+08:00">2020-05-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x2003;&#x2003;&#x4ECA;&#x5929;&#x670B;&#x53CB;&#x7ED9;&#x6211;&#x4E00;&#x4EFD;vue&#x7684;&#x9879;&#x76EE;&#x4EE3;&#x7801;&#xFF0C;&#x8BF4;&#x662F;&#x770B;&#x4E0D;&#x61C2;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x8FD0;&#x884C;&#x53BB;&#x751F;&#x6210;&#x9759;&#x6001;&#x9875;&#x9762;&#xFF0C;&#x597D;&#x90E8;&#x7F72;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x3002;</p>
+<a id="more"></a>
+<h3 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h3><p>&#x9879;&#x76EE;&#x4EE3;&#x7801;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x662F;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x251C;&#x2500;&#x2500; README.md</span><br><span class="line">&#x251C;&#x2500;&#x2500; babel.config.js</span><br><span class="line">&#x251C;&#x2500;&#x2500; dist</span><br><span class="line">&#x251C;&#x2500;&#x2500; package-lock.json</span><br><span class="line">&#x251C;&#x2500;&#x2500; package.json</span><br><span class="line">&#x251C;&#x2500;&#x2500; public</span><br><span class="line">&#x251C;&#x2500;&#x2500; src</span><br><span class="line">&#x2514;&#x2500;&#x2500; vue.config.js</span><br></pre></td></tr></table></figure>
+
+<p>&#x4E00;&#x770B;&#x5C31;&#x77E5;&#x9053;&#x5C11;&#x4E86;&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;&#x6587;&#x4EF6;&#x5939;<code>node_modules</code>&#xFF0C;&#x6240;&#x4EE5;&#x5148;&#x8FDB;&#x5165;&#x76EE;&#x5F55;&#xFF0C;&#x518D;&#x5B89;&#x88C5;&#x6240;&#x9700;&#x6A21;&#x5757;&#xFF0C;&#x7B49;&#x7B49;&#xFF0C;&#x5148;&#x6E05;&#x4E00;&#x4E0B;&#x7F13;&#x5B58;</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm cache clean --force</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x62A5;&#x9519;"><a href="#&#x62A5;&#x9519;" class="headerlink" title="&#x62A5;&#x9519;"></a>&#x62A5;&#x9519;</h3><p>&#x5B89;&#x88C5;&#x597D;&#x6A21;&#x5757;&#x4E4B;&#x540E;&#x8FD0;&#x884C;&#x4EE3;&#x7801;<code>npm run build</code>&#x62A5;&#x9519;&#x3002;&#x518D;&#x56DE;&#x5934;&#x770B;&#x770B;&#x521A;&#x624D;install&#x7684;&#x8B66;&#x544A;:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm WARN sass-loader@<span class="number">8.0</span><span class="number">.2</span> requires a peer <span class="keyword">of</span> sass@^<span class="number">1.3</span><span class="number">.0</span> but none is installed. You must install peer dependencies yourself.</span><br><span class="line">npm WARN sass-loader@<span class="number">8.0</span><span class="number">.2</span> requires a peer <span class="keyword">of</span> fibers@&gt;= <span class="number">3.1</span><span class="number">.0</span> but none is installed. You must install peer dependencies yourself.</span><br></pre></td></tr></table></figure>
+
+<p>&#x521A;&#x521A;intalll&#x7684;&#x65F6;&#x5019;&#x5B89;&#x88C5;&#x4E86;<code>node-sass@4.14.1</code>&#xFF0C;&#x4E0A;&#x9762;&#x7684;node-loader&#x91CC;&#x9762;&#x8981;&#x6C42;&#x5B89;&#x88C5;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x90A3;&#x5C31;&#x5B89;&#x88C5;&#x5427;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ npm install sass@^<span class="number">1.3</span><span class="number">.0</span></span><br><span class="line">$ npm install fibers@&gt;= <span class="number">3.1</span><span class="number">.0</span> </span><br><span class="line"><span class="comment">//&#x4E0A;&#x9762;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5177;&#x4F53;&#x7248;&#x672C;&#x662F;&#x4F1A;&#x62A5;&#x9519;&#x7684;&#xFF1A; npm ERR! 404 Not Found: 3.1.0@latest</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x67E5;&#x770B;fibers&#x73B0;&#x5728;&#x662F;&#x4EC0;&#x4E48;&#x7248;&#x672C;&#x4E86;</span></span><br><span class="line">$ npm view fibers version</span><br><span class="line"><span class="number">5.0</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x90A3;&#x5C31;&#x76F4;&#x63A5;&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7684;</span></span><br><span class="line">$ npm install fibers </span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x62A5;&#x9519;&#x4E86;&#xFF0C;&#x4E5F;&#x770B;&#x5F97;&#x51FA;&#x8FD9;&#x662F;build&#x7684;&#x5173;&#x952E;&#x6A21;&#x5757;&#x5427;</span></span><br><span class="line"><span class="comment">//&gt; node build.js || nodejs build.js</span></span><br><span class="line"><span class="comment">//gyp: No Xcode or CLT version detected!</span></span><br><span class="line"><span class="comment">//node-gyp exited with code: 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x89E3;&#x51B3;&#x95EE;&#x9898;"><a href="#&#x89E3;&#x51B3;&#x95EE;&#x9898;" class="headerlink" title="&#x89E3;&#x51B3;&#x95EE;&#x9898;"></a>&#x89E3;&#x51B3;&#x95EE;&#x9898;</h3><p>&#x4E00;&#x5927;&#x5806;&#x62A5;&#x9519;&#x8BA9;&#x4EBA;&#x5FC3;&#x70E6;&#xFF0C;&#x5E76;&#x4E14;&#x5BB3;&#x6015;&#x3002;&#x96BE;&#x9053;&#x53C8;&#x8981;&#x5B89;&#x88C5;&#x4EC0;&#x4E48;<code>node-gyp</code>&#x6216;&#x8005;<code>Xcode</code>&#x7B49;&#xFF0C;&#x53EF;&#x662F;&#x8FD9;&#x4E9B;&#x90FD;&#x4E0D;&#x60F3;&#x88C5;&#x554A;&#xFF0C;&#x597D;&#x9EBB;&#x70E6;&#x3002;&#x5C31;&#x9634;&#x5DEE;&#x9633;&#x9519;&#x5730;&#x8BD5;&#x7740;&#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x7248;&#x672C;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install fibers@<span class="number">3.1</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x7ED3;&#x679C;&#x5C31;&#x5B89;&#x88C5;&#x6210;&#x529F;&#x4E86;&#x2026;&#x5176;&#x5B9E;&#x6267;&#x884C;&#x8FD9;&#x4E00;&#x6B65;&#x7684;&#x4E4B;&#x524D;&#xFF0C;&#x56E0;&#x4E3A;&#x5FC3;&#x70E6;&#x610F;&#x4E71;&#x5730;&#x5C31;&#x5F00;&#x4E86;&#x5168;&#x5C40;&#x6A21;&#x5F0F;&#x4E86;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x8DDF;wall&#x6709;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x603B;&#x4E4B;&#x4E0D;&#x884C;&#x7684;&#x8BDD;&#x5C31;&#x9B54;&#x6CD5;&#x4E0A;&#x7F51;&#x5427;&#x3002;</p>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>&#x6700;&#x540E;build&#x4E00;&#x4E0B;&#x5C31;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x4E86;&#xFF0C;&#x653E;&#x5728;&#x65B0;&#x751F;&#x6210;&#x7684;dist&#x76EE;&#x5F55;&#x91CC;&#x9762;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run build</span><br></pre></td></tr></table></figure>
+
+<p>&#x5C06;dist&#x6587;&#x4EF6;&#x5939;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x9879;&#x76EE;&#x7684;&#x6548;&#x679C;&#x4E86;&#xFF01;</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/how-to-build-hexo-blog/" rel="prev" title="搭建hexo博客">
+      <i class="fa fa-chevron-left"></i> 搭建hexo博客
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/hexo-add-aplayer-plugins/" rel="next" title="给Hexo添加音乐播放器插件">
+      给Hexo添加音乐播放器插件 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Start"><span class="nav-number">1.</span> <span class="nav-text">Start</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报错"><span class="nav-number">2.</span> <span class="nav-text">报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决问题"><span class="nav-number">3.</span> <span class="nav-text">解决问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">4.</span> <span class="nav-text">End</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ftzz100"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">ftzz100</p>
+  <div class="site-description" itemprop="description">爱多一次，醉多一次</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-lemon"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ftzz100</span>
+</div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <!--<script src="/lib/metingjs/Meting.min.js"></script>-->
+    <script src="/js/Meting.min.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+    <!--aplayer start-->
+    <div class="aplayer no-destroy" 
+    data-id="5014450505" 
+    data-server="netease" 
+    data-type="playlist" 
+    data-fixed="true" 
+    data-autoplay="false" 
+    data-order="list" 
+    data-volume="0.5" 
+    data-theme="#cc543a" 
+    data-preload="auto" >
+    </div>
+    <!--aplayer end-->
+  </div>
+
+  
+    <script src='https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe-ui-default.min.js'></script>
+    <script type="text/javascript" src="/js/image.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  //elements: 'a[href]:not(.headerlink):not([href^="#"]):not([href="javascript:void(0)"])',
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+  //console.log("lm");
+  //pjax_reload()
+  //loadMeting();
+});
+
+//document.addEventListener('pjax:complete', function () {
+    //console.log('complete')
+    //alert("complete")
+    //
+    //pjax_reload();
+    //return false;
+    // $(document).pjax('a[target!=_blank][rel!=group]', '#pjax-container', {
+    //     fragment: '#pjax-container',
+    //     timeout: 1000,
+    // });
+//});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqusjs.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', () => {
+    window.dsqjs = new DisqusJS({
+      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
+      apikey    : 'hlDVq5932DR1fc7c0kaBtsENfBkqcmGJ23C2Pv4lc3AkfFcCvlDhj9CesPwQKpts',
+      shortname : 'ftzzloom-im',
+      url       : "https://ftzz100.github.io/vue-build-error/",
+      identifier: "vue-build-error/",
+      title     : "vue项目build错误解决",
+    });
+  }, window.DisqusJS);
+});
+</script>
+
+    </div>
+</body>
+</html>
