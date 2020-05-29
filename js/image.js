@@ -473,12 +473,12 @@ window.onload = function(){
         });
         
 
-        var switcher = container.getElementsByClassName("aplayer-miniswitcher")[0]
-        var aplayerbody = container.getElementsByClassName("aplayer-body")[0]
-        switcher.addEventListener("click",function(){
-            console.log('switcher');
-            aplayerbody.style.left = "0px";
-        });
+        // var switcher = container.getElementsByClassName("aplayer-miniswitcher")[0]
+        // var aplayerbody = container.getElementsByClassName("aplayer-body")[0]
+        // switcher.addEventListener("click",function(){
+        //     console.log('switcher');
+        //     aplayerbody.style.left = "0px";
+        // });
 
         //miniaplayer.on('seeked', function (e) {
         miniaplayer.on('play', function (e) {
