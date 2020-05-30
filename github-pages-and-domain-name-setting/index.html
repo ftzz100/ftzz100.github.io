@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.css' rel='stylesheet'/>
+    <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/default-skin/default-skin.min.css' rel='stylesheet'/>
+    <script src='https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ftzzloo.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":250,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="&amp;#x7528;GitHub&amp;#x642D;&amp;#x5EFA;&amp;#x535A;&amp;#x5BA2;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;&amp;#x662F;&amp;#x300C;UserName.github.io&amp;#x300D;&amp;#x8FD9;&amp;#x6837;&amp;#x7684;&amp;#x57DF;&amp;#x540D;&amp;#x3002;&amp;#x5982;&amp;#x679C;&amp;#x60F3;&amp;#x8981;&amp;#x4E2A;">
+<meta name="keywords" content="hexo,Github,blog,domain">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub博客绑定自定义域名">
+<meta property="og:url" content="https://ftzzloo.com/github-pages-and-domain-name-setting/index.html">
+<meta property="og:site_name" content="Freemon">
+<meta property="og:description" content="&amp;#x7528;GitHub&amp;#x642D;&amp;#x5EFA;&amp;#x535A;&amp;#x5BA2;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;&amp;#x662F;&amp;#x300C;UserName.github.io&amp;#x300D;&amp;#x8FD9;&amp;#x6837;&amp;#x7684;&amp;#x57DF;&amp;#x540D;&amp;#x3002;&amp;#x5982;&amp;#x679C;&amp;#x60F3;&amp;#x8981;&amp;#x4E2A;">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1214060530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1235130530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1242290530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1246110530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1428210530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1452570530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1459000530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1708210530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1516370530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1520320530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1507440530.png">
+<meta property="og:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1615420530.png">
+<meta property="og:updated_time" content="2020-05-30T09:49:44.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GitHub博客绑定自定义域名">
+<meta name="twitter:description" content="&amp;#x7528;GitHub&amp;#x642D;&amp;#x5EFA;&amp;#x535A;&amp;#x5BA2;&amp;#xFF0C;&amp;#x9ED8;&amp;#x8BA4;&amp;#x662F;&amp;#x300C;UserName.github.io&amp;#x300D;&amp;#x8FD9;&amp;#x6837;&amp;#x7684;&amp;#x57DF;&amp;#x540D;&amp;#x3002;&amp;#x5982;&amp;#x679C;&amp;#x60F3;&amp;#x8981;&amp;#x4E2A;">
+<meta name="twitter:image" content="https://ftzzloo.com/github-pages-and-domain-name-setting/CD1214060530.png">
+
+<link rel="canonical" href="https://ftzzloo.com/github-pages-and-domain-name-setting/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>GitHub博客绑定自定义域名 | Freemon</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167084562-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-167084562-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Freemon</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-reading">
+
+    <a href="/books" rel="section"><i class="fa fa-book fa-fw"></i>Reading</a>
+
+  </li>
+        <li class="menu-item menu-item-friends">
+
+    <a href="/friends" rel="section"><i class="fa fa-link fa-fw"></i>Friends</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ftzzloo.com/github-pages-and-domain-name-setting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="ftzz100">
+      <meta itemprop="description" content="爱多一次，醉多一次">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freemon">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GitHub博客绑定自定义域名
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-29 17:47:00" itemprop="dateCreated datePublished" datetime="2020-05-29T17:47:00+08:00">2020-05-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>&#x7528;GitHub&#x642D;&#x5EFA;&#x535A;&#x5BA2;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x300C;UserName.github.io&#x300D;&#x8FD9;&#x6837;&#x7684;&#x57DF;&#x540D;&#x3002;&#x5982;&#x679C;&#x60F3;&#x8981;&#x4E2A;&#x6027;&#x4E00;&#x4E9B;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED1;&#x5B9A;&#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#x3002;&#x672C;&#x6587;&#x4E3B;&#x8981;&#x5199;&#x4E86;&#x5982;&#x4F55;&#x7533;&#x8BF7;&#x57DF;&#x540D;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x7ED1;&#x5B9A;&#x57DF;&#x540D;&#x3002;</p>
+<a id="more"></a>
+
+<h3 id="&#x524D;&#x671F;&#x51C6;&#x5907;"><a href="#&#x524D;&#x671F;&#x51C6;&#x5907;" class="headerlink" title="&#x524D;&#x671F;&#x51C6;&#x5907;"></a>&#x524D;&#x671F;&#x51C6;&#x5907;</h3><ul>
+<li>&#x4E00;&#x4E2A;GitHub Pages&#x535A;&#x5BA2;</li>
+<li>&#x8D2D;&#x4E70;&#x57DF;&#x540D;&#x6240;&#x9700;&#x7684;&#x4E00;&#x4E9B;&#x8D44;&#x91D1;</li>
+</ul>
+<h3 id="&#x7533;&#x8BF7;&#x57DF;&#x540D;"><a href="#&#x7533;&#x8BF7;&#x57DF;&#x540D;" class="headerlink" title="&#x7533;&#x8BF7;&#x57DF;&#x540D;"></a>&#x7533;&#x8BF7;&#x57DF;&#x540D;</h3><p>&#x57DF;&#x540D;&#x662F;&#x6211;&#x4EEC;&#x7F51;&#x7AD9;&#x7684;&#x7F51;&#x5740;&#xFF0C;&#x60F3;&#x8981;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x53EF;&#x4EE5;&#x53BB;&#x57DF;&#x540D;&#x6CE8;&#x518C;&#x5E73;&#x53F0;&#x8D2D;&#x4E70;&#x3002;&#x56FD;&#x5185;&#x7684;&#x57DF;&#x540D;&#x6CE8;&#x518C;&#x7F51;&#x7AD9;&#x6709;&#x963F;&#x91CC;&#x4E91;&#x3001;&#x817E;&#x8BAF;&#x4E91;&#x3001;&#x65B0;&#x7F51;&#x3001;&#x897F;&#x90E8;&#x6570;&#x7801;&#x7B49;&#xFF0C;&#x5728;&#x8FD9;&#x4E9B;&#x8D2D;&#x4E70;&#x9700;&#x8981;&#x5404;&#x79CD;&#x8BA4;&#x8BC1;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x652F;&#x6301;&#x751F;&#x50FB;&#x7684;&#x51B7;&#x95E8;&#x57DF;&#x540D;&#x540E;&#x7F00;&#x3002;&#x56FD;&#x5916;&#x7684;&#x6709;Godaddy&#x3001;NameSilo&#x3001;namecheap&#x7B49;&#x3002;&#x6211;&#x9009;&#x62E9;NameSilo&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6027;&#x4EF7;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x5E76;&#x4E14;&#x6709;&#x514D;&#x8D39;&#x7684;WHOIS&#x57DF;&#x540D;&#x9690;&#x79C1;&#x4FDD;&#x62A4;&#x670D;&#x52A1;&#x3002;</p>
+<h4 id="&#x6CE8;&#x518C;namesilo"><a href="#&#x6CE8;&#x518C;namesilo" class="headerlink" title="&#x6CE8;&#x518C;namesilo"></a>&#x6CE8;&#x518C;namesilo</h4><p>&#x53BB;<a href="https://www.namesilo.com/" rel="noopener external nofollow noreferrer" target="_blank">namesilo&#x5B98;&#x7F51;</a>&#x67E5;&#x627E;&#x5230;&#x81EA;&#x5DF1;&#x6EE1;&#x610F;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x4EF7;&#x683C;&#x90FD;&#x6709;&#x6807;&#x6CE8;&#x3002;&#x4E00;&#x4E9B;&#x51B7;&#x95E8;&#x57DF;&#x540D;&#x540E;&#x7F00;&#x7B2C;&#x4E00;&#x5E74;&#x6BD4;&#x8F83;&#x4FBF;&#x5B9C;&#xFF0C;&#x7EED;&#x8D39;&#x53EF;&#x80FD;&#x4F1A;&#x6BD4;&#x8F83;&#x8D35;&#xFF0C;&#x8FD9;&#x4E9B;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x4E0B;&#x3002;&#x800C;&#x4E00;&#x822C;&#x7684;.com&#x9876;&#x7EA7;&#x57DF;&#x540D;&#x4EF7;&#x683C;&#x662F;$8.99&#xFF0C;&#x4E14;&#x76EE;&#x524D;&#x7EED;&#x8D39;&#x4E0D;&#x6DA8;&#x4EF7;&#xFF0C;&#x633A;&#x5212;&#x7B97;&#x7684;&#x3002;</p>
+<p>&#x5148;&#x6CE8;&#x518C;&#x8D26;&#x53F7;&#xFF0C;&#x6CE8;&#x518C;&#x5B8C;&#x8981;&#x9A8C;&#x8BC1;&#x90AE;&#x7BB1;</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1214060530.png" alt></p>
+<center class="img-alt">&#x521B;&#x5EFA;&#x8D26;&#x53F7;</center>
+
+
+<h4 id="&#x5B8C;&#x5584;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;"><a href="#&#x5B8C;&#x5584;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;" class="headerlink" title="&#x5B8C;&#x5584;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;"></a>&#x5B8C;&#x5584;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;</h4><p>&#x6CE8;&#x518C;&#x8D26;&#x53F7;&#x4E4B;&#x540E;&#x53EF;&#x80FD;&#x4F1A;&#x7ACB;&#x523B;&#x8DF3;&#x8F6C;&#x5230;&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x8981;&#x6C42;&#x5B8C;&#x5584;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x3002;&#x5982;&#x679C;&#x6682;&#x65F6;&#x4E0D;&#x586B;&#x5199;&#xFF0C;&#x8D2D;&#x4E70;&#x57DF;&#x540D;&#x65F6;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x586B;&#x5199;&#x7684;</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1235130530.png" alt></p>
+<center class="img-alt">&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;</center>
+
+<p>&#x53EF;&#x4EE5;&#x586B;&#x5199;&#x771F;&#x5B9E;&#x4FE1;&#x606F;&#xFF0C;&#x4E0D;&#x7528;&#x9A8C;&#x8BC1;&#x624B;&#x673A;&#x53F7;</p>
+<h4 id="&#x8D2D;&#x4E70;&#x57DF;&#x540D;"><a href="#&#x8D2D;&#x4E70;&#x57DF;&#x540D;" class="headerlink" title="&#x8D2D;&#x4E70;&#x57DF;&#x540D;"></a>&#x8D2D;&#x4E70;&#x57DF;&#x540D;</h4><p>&#x53BB;&#x9996;&#x9875;&#x9009;&#x8D2D;&#x57DF;&#x540D;&#xFF0C;&#x7136;&#x540E;&#x53BB;&#x8D2D;&#x7269;&#x8F66;&#x786E;&#x8BA4;&#x8BA2;&#x5355;</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1242290530.png" alt></p>
+<center class="img-alt">&#x8D2D;&#x4E70;&#x57DF;&#x540D;</center>
+
+<p>&#x7136;&#x540E;&#x9009;&#x62E9;&#x652F;&#x4ED8;&#x65B9;&#x5F0F;</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1246110530.png" alt></p>
+<center class="img-alt">&#x9009;&#x62E9;&#x652F;&#x4ED8;</center>
+
+<p>&#x652F;&#x4ED8;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x5C31;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#x4E86;</p>
+<h3 id="&#x57DF;&#x540D;&#x89E3;&#x6790;"><a href="#&#x57DF;&#x540D;&#x89E3;&#x6790;" class="headerlink" title="&#x57DF;&#x540D;&#x89E3;&#x6790;"></a>&#x57DF;&#x540D;&#x89E3;&#x6790;</h3><p>&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x6709;&#x535A;&#x5BA2;&#x548C;&#x57DF;&#x540D;&#xFF0C;&#x8981;&#x5C06;&#x4E24;&#x79CD;&#x7ED1;&#x5B9A;&#x8D77;&#x6765;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x8BBF;&#x95EE;&#x57DF;&#x540D;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x5BF9;&#x5E94;IP&#x5730;&#x5740;&#x3002;<br>&#x4E00;&#x822C;&#x7684;&#x57DF;&#x540D;&#x6CE8;&#x518C;&#x5546;&#x90FD;&#x4F1A;&#x63D0;&#x4F9B;&#x81EA;&#x5E26;&#x7684;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x670D;&#x52A1;&#xFF0C;namesilo&#x4E5F;&#x4E0D;&#x4F8B;&#x5916;&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x81EA;&#x5E26;&#x7684;&#x6765;&#x89E3;&#x6790;&#x57DF;&#x540D;</p>
+<p>&#x8FDB;&#x5165;&#x84DD;&#x8272;&#x5C0F;&#x56FE;&#x6807;&#x7BA1;&#x7406;DNS</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1428210530.png" alt></p>
+<center class="img-alt">&#x7BA1;&#x7406;DNS</center>
+
+<h4 id="&#x6DFB;&#x52A0;A&#x8BB0;&#x5F55;"><a href="#&#x6DFB;&#x52A0;A&#x8BB0;&#x5F55;" class="headerlink" title="&#x6DFB;&#x52A0;A&#x8BB0;&#x5F55;"></a>&#x6DFB;&#x52A0;A&#x8BB0;&#x5F55;</h4><p>&#x5C06;&#x300C;Existing Resource Records&#x300D;&#x4E0B;&#x9762;&#x9ED8;&#x8BA4;&#x7684;&#x5217;&#x8868;&#x8BB0;&#x5F55;&#x5168;&#x90E8;&#x5220;&#x9664;&#x3002;&#x5982;&#x679C;&#x65E0;&#x6CD5;&#x5220;&#x9664;&#xFF0C;&#x8BD5;&#x7740;&#x5237;&#x65B0;&#x9875;&#x9762;&#xFF0C;&#x56E0;&#x4E3A;&#x7F51;&#x7AD9;&#x5076;&#x5C14;&#x4F1A;&#x62BD;&#x98CE;&#x3002;<br>&#x7136;&#x540E;&#x70B9;&#x51FB;&#x4E0A;&#x65B9;&#x7684;A&#xFF0C;&#x6DFB;&#x52A0;A&#x8BB0;&#x5F55;</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1452570530.png" alt></p>
+<center class="img-alt">A&#x8BB0;&#x5F55;</center>
+
+<p>&#x6DFB;&#x52A0;A&#x8BB0;&#x5F55;&#xFF0C;TTL&#x6539;&#x4E3A;3600&#xFF0C;ip&#x5730;&#x5740;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>ping yourusername.github.io</code>&#x83B7;&#x5F97;</p>
+<h4 id="&#x6DFB;&#x52A0;CNME&#x8BB0;&#x5F55;"><a href="#&#x6DFB;&#x52A0;CNME&#x8BB0;&#x5F55;" class="headerlink" title="&#x6DFB;&#x52A0;CNME&#x8BB0;&#x5F55;"></a>&#x6DFB;&#x52A0;CNME&#x8BB0;&#x5F55;</h4><p>&#x7136;&#x540E;&#x8FD8;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x6761;CNAME&#xFF0C;&#x89E3;&#x6790;&#x5230;Github Pages&#x7684;&#x57DF;&#x540D;</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1459000530.png" alt></p>
+<center class="img-alt">CNAME&#x8BB0;&#x5F55;</center>
+
+<p><img src="/github-pages-and-domain-name-setting/CD1708210530.png" alt></p>
+<center class="img-alt">&#x5B8C;&#x6574;&#x8BB0;&#x5F55;&#x5217;&#x8868;</center>
+
+<p>&#x8FD9;&#x6837;&#x5728;namesilo&#x7684;DNS&#x89E3;&#x6790;&#x64CD;&#x4F5C;&#x5C31;&#x544A;&#x4E00;&#x6BB5;&#x843D;&#x4E86;&#x3002;</p>
+<h4 id="&#x7B2C;&#x4E09;&#x65B9;DNS&#x89E3;&#x6790;&#x670D;&#x52A1;"><a href="#&#x7B2C;&#x4E09;&#x65B9;DNS&#x89E3;&#x6790;&#x670D;&#x52A1;" class="headerlink" title="&#x7B2C;&#x4E09;&#x65B9;DNS&#x89E3;&#x6790;&#x670D;&#x52A1;"></a>&#x7B2C;&#x4E09;&#x65B9;DNS&#x89E3;&#x6790;&#x670D;&#x52A1;</h4><p>&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x7528;&#x81EA;&#x5E26;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Cloudflare&#x3001;DNSPod&#x7B49;&#x7B2C;&#x4E09;&#x65B9;DNS&#x89E3;&#x6790;&#x670D;&#x52A1;&#xFF0C;&#x8981;&#x989D;&#x5916;&#x6CE8;&#x518C;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x8D26;&#x53F7;&#x3002;<br>&#x5728;&#x7BA1;&#x7406;&#x57DF;&#x540D;&#x5904;&#x9009;&#x62E9;&#x300C;Change Nameservers&#x300D;</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1516370530.png" alt></p>
+<center class="img-alt">Change Nameservers</center>
+
+
+<p><img src="/github-pages-and-domain-name-setting/CD1520320530.png" alt></p>
+<center class="img-alt">&#x4FEE;&#x6539;&#x5730;&#x5740;</center>
+
+<h3 id="&#x6DFB;&#x52A0;CNAME&#x91CD;&#x5B9A;&#x5411;"><a href="#&#x6DFB;&#x52A0;CNAME&#x91CD;&#x5B9A;&#x5411;" class="headerlink" title="&#x6DFB;&#x52A0;CNAME&#x91CD;&#x5B9A;&#x5411;"></a>&#x6DFB;&#x52A0;CNAME&#x91CD;&#x5B9A;&#x5411;</h3><p>&#x57DF;&#x540D;&#x89E3;&#x6790;&#x540E;&#x8FD8;&#x9700;&#x8981;&#x6700;&#x540E;&#x4E00;&#x6B65;&#xFF0C;&#x5728;&#x81EA;&#x5DF1;&#x7684;GitHub Pages&#x91CC;&#x914D;&#x7F6E;CNAME&#x3002;<br>&#x5728;&#x81EA;&#x5DF1;&#x7684;Hexo&#x672C;&#x5730;&#x535A;&#x5BA2;&#x76EE;&#x5F55;&#x4E0B;&#x7684;source&#x76EE;&#x5F55;&#x91CC;&#x9762;&#xFF0C;&#x65B0;&#x5EFA;CNAME&#x6587;&#x4EF6;&#xFF0C;&#x6CE8;&#x610F;&#x6587;&#x4EF6;&#x6CA1;&#x6709;&#x540E;&#x7F00;&#x3002;<br>&#x7136;&#x540E;&#x5728;&#x6587;&#x4EF6;&#x91CC;&#x8F93;&#x5165;&#x4F60;&#x7684;&#x57DF;&#x540D;<code>example.com</code>&#x540E;&#x4FDD;&#x5B58;&#xFF0C;&#x6CE8;&#x610F;&#x4E0D;&#x8981;&#x5305;&#x542B;<code>https:// http:// www</code>&#x3002;<br>&#x7136;&#x540E;&#x5728;&#x6839;&#x76EE;&#x5F55;&#x91CC;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF0C;&#x90E8;&#x7F72;&#x5230;GitHub</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo g &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>&#x8FD9;&#x6837;&#x5C31;&#x5728;GitHub Pages&#x7684;&#x4ED3;&#x5E93;&#x6839;&#x76EE;&#x5F55;&#x91CC;&#x589E;&#x52A0;&#x4E86;CNAME&#x6587;&#x4EF6;&#xFF0C;&#x8BBF;&#x95EE;&#x539F;&#x6765;&#x7684;&#x535A;&#x5BA2;&#x5730;&#x5740;&#x5C31;&#x4F1A;&#x8DF3;&#x8F6C;&#x5230;&#x81EA;&#x5B9A;&#x4E49;&#x57DF;&#x540D;&#x5730;&#x5740;&#x4E86;</p>
+<p>&#x81F3;&#x6B64;&#x5C31;&#x53EF;&#x4EE5;&#x53BB;&#x5730;&#x5740;&#x680F;&#x8F93;&#x5165;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x6CA1;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#x7684;&#x8BDD;&#x5C31;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x535A;&#x5BA2;&#x4E86;&#x3002;&#x7ED1;&#x5B9A;&#x6210;&#x529F;&#x6492;&#x82B1;&#x1F389;&#x1F389;&#x1F389;<br>&#x2026;&#x5982;&#x679C;&#x8FD8;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#xFF0C;&#x53EF;&#x80FD;&#x8981;&#x518D;&#x7B49;&#x5341;&#x51E0;&#x5206;&#x949F;&#xFF0C;&#x7B49;DNS&#x89E3;&#x6790;&#x597D;&#x4E86;&#x57DF;&#x540D;&#x624D;&#x751F;&#x6548;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7F51;&#x7AD9;&#x652F;&#x6301;https"><a href="#&#x4F7F;&#x7F51;&#x7AD9;&#x652F;&#x6301;https" class="headerlink" title="&#x4F7F;&#x7F51;&#x7AD9;&#x652F;&#x6301;https"></a>&#x4F7F;&#x7F51;&#x7AD9;&#x652F;&#x6301;https</h3><p>&#x8BBF;&#x95EE;&#x81EA;&#x5DF1;&#x57DF;&#x540D;&#xFF0C;&#x7EC6;&#x5FC3;&#x7684;&#x8BDD;&#x4F1A;&#x53D1;&#x73B0;&#x57DF;&#x540D;&#x5F00;&#x5934;&#x662F;http&#x7684;&#xFF0C;GitHub&#x73B0;&#x5728;&#x63D0;&#x4F9B;&#x514D;&#x8D39;&#x7684;https&#x670D;&#x52A1;&#xFF0C;&#x4E0D;&#x7528;&#x53BB;&#x7533;&#x8BF7;&#x8BC1;&#x4E66;&#x3002;</p>
+<p>&#x5728;&#x81EA;&#x5DF1;&#x7684;GitHub Pages&#x4ED3;&#x5E93;&#x91CC;&#xFF0C;&#x9009;&#x4E2D;Settings</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1507440530.png" alt></p>
+<p>&#x62C9;&#x5230;&#x9875;&#x9762;&#x4E0B;&#x65B9;&#xFF0C;&#x627E;&#x5230;GitHub Pages&#x7684;&#x8BBE;&#x7F6E;&#x533A;&#x57DF;</p>
+<p><img src="/github-pages-and-domain-name-setting/CD1615420530.png" alt></p>
+<center class="img-alt">&#x6267;&#x884C;Https</center>
+
+<p>&#x5728;&#x300C;Enforce HTTPS&#x300D;&#x524D;&#x9762;&#x6253;&#x52FE;&#xFF08;&#x53EF;&#x80FD;&#x8981;&#x534A;&#x4E2A;&#x5C0F;&#x65F6;&#x6216;&#x8005;&#x51E0;&#x4E2A;&#x5C0F;&#x65F6;&#x624D;&#x81EA;&#x52A8;&#x751F;&#x6548;&#xFF09;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E3A;http&#x5957;&#x4E0A;&#x4E86;SSL&#xFF0C;&#x8BBF;&#x95EE;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#x53EF;&#x770B;&#x5230;https&#x7ACB;&#x5373;&#x751F;&#x6548;&#xFF0C;&#x663E;&#x793A;&#x300C;&#x8FDE;&#x63A5;&#x662F;&#x5B89;&#x5168;&#x7684;&#x300D;&#x4E86;&#x3002;</p>
+<h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><p><a href="https://zhuanlan.zhihu.com/p/86961133" rel="noopener external nofollow noreferrer" target="_blank">Namesilo DNS &#x57DF;&#x540D;&#x89E3;&#x6790;&#x6559;&#x7A0B;&#x548C;&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x6C47;&#x603B;</a><br><a href="https://zhuanlan.zhihu.com/p/56423186" rel="noopener external nofollow noreferrer" target="_blank">&#x57DF;&#x540D;&#x89E3;&#x6790;&#x6559;&#x7A0B;&#xFF1A;Cloudflare&#x89E3;&#x6790;&#x4E0E;DNSPod&#x89E3;&#x6790;</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/Github/" rel="tag"><i class="fa fa-tag"></i> Github</a>
+              <a href="/tags/blog/" rel="tag"><i class="fa fa-tag"></i> blog</a>
+              <a href="/tags/domain/" rel="tag"><i class="fa fa-tag"></i> domain</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/KFC-children-day-pokemon-toy/" rel="prev" title="KFC儿童节套餐">
+      <i class="fa fa-chevron-left"></i> KFC儿童节套餐
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#申请域名"><span class="nav-number">2.</span> <span class="nav-text">申请域名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册namesilo"><span class="nav-number">2.1.</span> <span class="nav-text">注册namesilo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完善个人信息"><span class="nav-number">2.2.</span> <span class="nav-text">完善个人信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#购买域名"><span class="nav-number">2.3.</span> <span class="nav-text">购买域名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名解析"><span class="nav-number">3.</span> <span class="nav-text">域名解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加A记录"><span class="nav-number">3.1.</span> <span class="nav-text">添加A记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加CNME记录"><span class="nav-number">3.2.</span> <span class="nav-text">添加CNME记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三方DNS解析服务"><span class="nav-number">3.3.</span> <span class="nav-text">第三方DNS解析服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加CNAME重定向"><span class="nav-number">4.</span> <span class="nav-text">添加CNAME重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使网站支持https"><span class="nav-number">5.</span> <span class="nav-text">使网站支持https</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ftzz100"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">ftzz100</p>
+  <div class="site-description" itemprop="description">爱多一次，醉多一次</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-lemon"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ftzz100</span>
+</div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <!--<script src="/lib/metingjs/Meting.min.js"></script>-->
+    <script src="/js/Meting.min.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+    <!--aplayer start-->
+    <div class="aplayer no-destroy" 
+    data-id="5014450505" 
+    data-server="netease" 
+    data-type="playlist" 
+    data-fixed="true" 
+    data-autoplay="false" 
+    data-order="list" 
+    data-volume="0.5" 
+    data-theme="#cc543a" 
+    data-preload="auto" >
+    </div>
+    <!--aplayer end-->
+  </div>
+
+  
+    <script src='https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe-ui-default.min.js'></script>
+    <script type="text/javascript" src="/js/image.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  //elements: 'a[href]:not(.headerlink):not([href^="#"]):not([href="javascript:void(0)"])',
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+  //console.log("lm");
+  //pjax_reload()
+  //loadMeting();
+});
+
+//document.addEventListener('pjax:complete', function () {
+    //console.log('complete')
+    //alert("complete")
+    //
+    //pjax_reload();
+    //return false;
+    // $(document).pjax('a[target!=_blank][rel!=group]', '#pjax-container', {
+    //     fragment: '#pjax-container',
+    //     timeout: 1000,
+    // });
+//});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqusjs.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', () => {
+    window.dsqjs = new DisqusJS({
+      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
+      apikey    : 'hlDVq5932DR1fc7c0kaBtsENfBkqcmGJ23C2Pv4lc3AkfFcCvlDhj9CesPwQKpts',
+      shortname : 'ftzzloom-im',
+      url       : "https://ftzzloo.com/github-pages-and-domain-name-setting/",
+      identifier: "github-pages-and-domain-name-setting/",
+      title     : "GitHub博客绑定自定义域名",
+    });
+  }, window.DisqusJS);
+});
+</script>
+
+    </div>
+</body>
+</html>

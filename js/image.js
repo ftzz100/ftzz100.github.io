@@ -45,6 +45,7 @@ var pjax_hrefBlank = function(){
 
 
 function pjax_photoswipe(){
+    //console.log("img")
     var initPhotoSwipeFromDOM = function(gallerySelector) {
         //console.log('pjax_photoswipe')
         // parse slide data (url, title, size ...) from DOM elements 
@@ -81,8 +82,8 @@ function pjax_photoswipe(){
                     src: src,
                     //w: parseInt(size[0], 10),
                     //h: parseInt(size[1], 10)
-                    w: imageEl.naturalWidth,
-                    h: imageEl.naturalHeight
+                    w: imageEl.naturalWidth*0.8,
+                    h: imageEl.naturalHeight*0.8
                    
                 };
     
@@ -379,7 +380,7 @@ var pjax_allfn = function(){
     //音乐文章专用
     if(location.href.indexOf("aplayer") != -1){
         //console.log("loadaplayer");
-        pjax_music(); //加载经典写法aplayer
+        pjax_music(); //加载经典写法的两个aplayer
         
         //console.log(aplayers)
         for(var i in aplayers){
@@ -389,7 +390,10 @@ var pjax_allfn = function(){
         //console.log("loadmeting")
         loadMeting(); //加载metingjs写法
         
+    }else{
+        loadMeting();
     }
+
     //图片放大
     pjax_photoswipe();
 
@@ -469,7 +473,7 @@ window.onload = function(){
         //className = container.className;
         var bar = container.getElementsByClassName("aplayer-bar-wrap")[0]
         bar.addEventListener("click",function(){
-            console.log('jtclick seeked');
+            //console.log('jtclick seeked');
         });
         
 
@@ -499,7 +503,7 @@ window.onload = function(){
         
 
        
-    },3000)
+    },8000)
 
     // setTimeout(function(){
     //     var switcher = document.querySelector(".aplayer-miniswitcher");
