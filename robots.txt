@@ -13,5 +13,6 @@ Disallow: /images/
 Disallow: /img/
 Disallow: /test/
 Disallow: /music/
+Disallow: /friends/
 
 Sitemap: https://www.ftzzloo.com/sitemap.xml
