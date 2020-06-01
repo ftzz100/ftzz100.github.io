@@ -357,31 +357,28 @@ td {
   margin-top: 3px;
 }
 .toggle.toggle-arrow .toggle-line-first {
-  left: 50%;
   top: 2px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   width: 50%;
 }
 .toggle.toggle-arrow .toggle-line-middle {
-  left: 2px;
   width: 90%;
 }
 .toggle.toggle-arrow .toggle-line-last {
-  left: 50%;
   top: -2px;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
   width: 50%;
 }
 .toggle.toggle-close .toggle-line-first {
-  transform: rotate(-45deg);
   top: 5px;
+  transform: rotate(-45deg);
 }
 .toggle.toggle-close .toggle-line-middle {
   opacity: 0;
 }
 .toggle.toggle-close .toggle-line-last {
-  transform: rotate(45deg);
   top: -5px;
+  transform: rotate(45deg);
 }
 .highlight-container {
   position: relative;
@@ -1193,7 +1190,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0e2dff;
+  background: #4b7db5;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2240,11 +2237,11 @@ ul.breadcrumb li + li:last-child {
   padding: 0;
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 260px;
 }
 @media (min-width: 1200px) {
   .header-inner {
-    width: 250px;
+    width: 260px;
   }
 }
 @media (max-width: 991px) {
@@ -2258,7 +2255,6 @@ ul.breadcrumb li + li:last-child {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  flex-direction: row-reverse;
 }
 @media (max-width: 991px) {
   .main-inner {
@@ -2271,7 +2267,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   box-sizing: border-box;
   padding: 40px;
-  width: calc(100% - 262px);
+  width: calc(100% - 272px);
 }
 @media (max-width: 991px) {
   .content-wrap {
@@ -2280,17 +2276,14 @@ ul.breadcrumb li + li:last-child {
     width: 100%;
   }
 }
+.header-inner {
+  right: 0;
+}
+.book-mark-link {
+  left: 30px;
+}
 .footer-inner {
-  padding-left: 260px;
-}
-.back-to-top {
-  left: auto;
-  right: 30px;
-}
-@media (max-width: 991px) {
-  .back-to-top {
-    right: 20px;
-  }
+  padding-right: 260px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -2413,7 +2406,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: none;
   margin-top: 100%;
   position: static;
-  width: 250px;
+  width: 260px;
 }
 @media (max-width: 991px) {
   .sidebar {
@@ -2429,7 +2422,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   box-sizing: border-box;
   color: var(--text-color);
-  width: 250px;
+  width: 260px;
 }
 .sidebar-inner.affix {
   position: fixed;
@@ -2656,7 +2649,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .header {
-  width: 82%;
+  width: 85%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -2669,7 +2662,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .container .main-inner {
-  width: 82%;
+  width: 85%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2682,7 +2675,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .content-wrap {
-  width: calc(100% - 260px);
+  width: calc(99% - 270px);
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
@@ -2786,20 +2779,16 @@ body {
   padding-left: 20px;
 }
 .posts-expand .post-tags a {
+  color: #e98178 !important;
+  text-decoration: none;
   border-bottom: 0px;
-  _background: #c2c2c2;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  font-family: 'Comic Sans MS', sans-serif;
+  transition: 0.2s ease-out;
+  padding: 3px 5px;
+  margin: 5px;
   background: #f5f5f5;
-  padding: 0.15em 0.4em;
-  border-radius: 5px;
-  font-family: sans-serif;
-  transition: all 0.3s ease-in-out;
-}
-.posts-expand .post-tags a:hover {
-  color: #fff;
-  background: #70a0b9;
-  _color: unset;
-  _color: #eb5757;
-  _color: #e67474;
+  border-radius: 15px;
 }
 code {
   background: #fefac7;
@@ -3094,15 +3083,26 @@ center.img-alt b {
 .category-list-item .category-list-link:hover {
   color: #e46662;
 }
+.tag-cloud {
+  width: 80%;
+  margin: 0 auto;
+}
 .tag-cloud-tags a {
   color: #e98178 !important;
   text-decoration: none;
   border-bottom: 0px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  font-family: 'Comic Sans MS', sans-serif;
+  transition: 0.2s ease-out;
+  padding: 3px 5px;
+  margin: 5px;
+  background: #f5f5f5;
+  border-radius: 15px;
+  font-size: 14px !important;
 }
 .links-of-author-item {
   margin: 0 5px 10px;
-  width: 35%;
-  transition: all 0.3s ease-in-out;
+  width: 33%;
 }
 .links-of-author-item a {
   _background: rgba(230,244,249,0.8);
@@ -3110,7 +3110,8 @@ center.img-alt b {
   border-radius: 15px;
   line-height: 30px;
   height: 30px;
-  transition: all 0.3s ease-in-out;
+  _transition: all 0.3s ease-in-out;
+  transition: 0.3s ease;
   font-style: normal;
   display: flex;
   vertical-align: middle;
@@ -3121,16 +3122,18 @@ center.img-alt b {
   padding: 0 5px;
   margin-right: 0;
   margin-bottom: 0;
-  max-width: 216px;
+  max-width: 200px;
   box-sizing: border-box;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.links-of-author-item:hover a {
+.links-of-author-item a:hover {
   color: unset;
   _background: rgba(230,244,249,0.8);
-  background: #dcedfe;
-  border-radius: 0px;
+  background: rgba(0,132,255,0.1);
+  _background: #dcedfe;
+  border-radius: 15px;
+  transform: scale(1.1);
 }
 .links-of-author-item .fa-fw {
   margin-right: 8px;
@@ -3152,4 +3155,54 @@ center.img-alt b {
 }
 .aplayer-body {
   _left: -66px;
+}
+.umaru {
+  position: fixed;
+  bottom: 1px;
+  left: -132px;
+  z-index: 98;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(3px);
+  -webkit-transition: all 0.3s ease-in-out;
+  -webkit-transform: translateY(3px);
+}
+.umaru:hover {
+  transform: scale(1.06);
+}
+.umaru-down:hover:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 146px;
+  height: 100%;
+  _left: 137px;
+  _top: -40px;
+  left: 153px;
+  top: -45px;
+  background: url("/images/music3.png") no-repeat 0 100%;
+  background-size: 146px;
+  z-index: 1;
+  cursor: pointer;
+}
+.umaru-up:hover:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 146px;
+  height: 100%;
+  left: 153px;
+  top: -45px;
+  background: url("/images/music7.png") no-repeat 0 100%;
+  background-size: 146px;
+  z-index: 1;
+}
+.umaru img {
+  width: 35%;
+  float: right;
+  cursor: pointer;
+}
+.no-destroy .aplayer-body,
+.no-destroy .aplayer-lrc {
+  max-height: 0px;
+  transition: all 0.5s ease;
 }

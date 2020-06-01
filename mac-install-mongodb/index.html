@@ -9,6 +9,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="Wj0fqSdbmDZBLXzt2hZoN7xab5X_LgtX2eSMvzIqxRI">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -18,10 +20,12 @@
     <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.css' rel='stylesheet'/>
     <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/default-skin/default-skin.min.css' rel='stylesheet'/>
     <script src='https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"ftzzloo.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":250,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"ftzzloo.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","width":260,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="&amp;#x2003;&amp;#x2003;&amp;#x7531;&amp;#x4E8E;&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x722C;&amp;#x866B;&amp;#xFF0C;&amp;#x83B7;&amp;#x53D6;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x5927;&amp;#x591A;&amp;#x662F;json&amp;#x683C;&amp;#x5F0F;&amp;#x7684;&amp;#xFF0C;&amp;#x4E4B;&amp;#x524D;&amp;#x6">
@@ -223,7 +227,7 @@
 <a id="more"></a>
 
 <h3 id="1-&#x7B80;&#x4ECB;"><a href="#1-&#x7B80;&#x4ECB;" class="headerlink" title="1. &#x7B80;&#x4ECB;"></a>1. &#x7B80;&#x4ECB;</h3><p>&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5728;mac&#x7EC8;&#x7AEF;&#x4E0B;&#x8FD0;&#x884C;&#x3002;<br>&#x6240;&#x4EE5;&#x8BFB;&#x8005;&#x9700;&#x8981;&#x5728;&#x81EA;&#x5DF1;&#x7535;&#x8111;&#x4E0A;&#x5B89;&#x88C5;linux&#x7CFB;&#x7EDF;&#xFF0C;&#x5B89;&#x88C5;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x8C37;&#x6B4C;&#x6216;&#x767E;&#x5EA6;&#x3002;<br>&#x5EFA;&#x8BAE;&#x5728; linux &#x4E0B;&#x5B9E;&#x8DF5;&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x3001;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x3002;</p>
-<h3 id="2-&#x5B89;&#x88C5;"><a href="#2-&#x5B89;&#x88C5;" class="headerlink" title="2. &#x5B89;&#x88C5;"></a>2. &#x5B89;&#x88C5;</h3><p>&#x5B98;&#x65B9;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://www.mongodb.com/download-center#community" rel="noopener external nofollow noreferrer" target="_blank">mongoDB&#x5B98;&#x7F51;</a><br>&#x4E0B;&#x8F7D;&#x89E3;&#x538B;&#x5E76;&#x5C06;&#x6587;&#x4EF6;&#x5939;&#x6539;&#x540D;&#x4E3A;mongodb&#xFF0C;&#x518D;&#x5C06;&#x5176;&#x653E;&#x5728; /usr/local/ &#x76EE;&#x5F55;&#x4E0B;<br>&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<h3 id="2-&#x5B89;&#x88C5;"><a href="#2-&#x5B89;&#x88C5;" class="headerlink" title="2. &#x5B89;&#x88C5;"></a>2. &#x5B89;&#x88C5;</h3><p>&#x5B98;&#x65B9;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<span class="exturl" data-url="aHR0cHM6Ly93d3cubW9uZ29kYi5jb20vZG93bmxvYWQtY2VudGVyI2NvbW11bml0eQ==">mongoDB&#x5B98;&#x7F51;<i class="fa fa-external-link-alt"></i></span><br>&#x4E0B;&#x8F7D;&#x89E3;&#x538B;&#x5E76;&#x5C06;&#x6587;&#x4EF6;&#x5939;&#x6539;&#x540D;&#x4E3A;mongodb&#xFF0C;&#x518D;&#x5C06;&#x5176;&#x653E;&#x5728; /usr/local/ &#x76EE;&#x5F55;&#x4E0B;<br>&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#xFF1A;</p>
 <p>&#x6253;&#x5F00;&#x7535;&#x8111;&#x7EC8;&#x7AEF;&#xFF0C;&#x8FDB;&#x5165;&#x4EE5;&#x4E0B;&#x76EE;&#x5F55;</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local</span><br></pre></td></tr></table></figure>
 
@@ -294,7 +298,7 @@
 <p>&#x95EE;&#x9898;&#x539F;&#x56E0;&#xFF1A;<br><code>ctrl+c</code> &#x5C31;&#x80FD;&#x4E2D;&#x65AD;&#x9000;&#x51FA;&#x8FDB;&#x7A0B;<br><code>ctrl+z</code> &#x53EA;&#x662F;&#x5C06;&#x670D;&#x52A1;&#x5728;&#x540E;&#x53F0;&#x6302;&#x8D77;&#xFF0C;&#x4E0D;&#x4F1A;&#x4E2D;&#x65AD;&#x3002;&#x5982;&#x8981;&#x6062;&#x590D;&#x670D;&#x52A1;&#x7528; <code>fg</code> &#x547D;&#x4EE4;</p>
 <!--2019-07-28 22:49:14 星期日-->
 
-<h4 id="&#x53C2;&#x8003;&#x8D44;&#x6E90;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#x8D44;&#x6E90;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#x8D44;&#x6E90;&#xFF1A;"></a>&#x53C2;&#x8003;&#x8D44;&#x6E90;&#xFF1A;</h4><p><a href="https://www.runoob.com/mongodb/mongodb-osx-install.html" rel="noopener external nofollow noreferrer" target="_blank">&#x83DC;&#x9E1F;&#x6559;&#x7A0B;: Mac OSX &#x5E73;&#x53F0;&#x5B89;&#x88C5; MongoDB</a><br><a href="https://www.jianshu.com/p/2d0a1ecd0c82" rel="noopener external nofollow noreferrer" target="_blank">mac&#x4E0B;mongodb&#x7684;&#x5B89;&#x88C5;&#x548C;&#x4F7F;&#x7528;(&#x4F7F;&#x7528;&#x7EC8;&#x7AEF;&#x64CD;&#x4F5C;)</a><br><a href="https://segmentfault.com/a/1190000002547229" rel="noopener external nofollow noreferrer" target="_blank">Mac&#x4E0B;&#x5B89;&#x88C5;MongoDB &#x53CA;&#x4F7F;&#x7528;&#x6559;&#x7A0B;</a><br><a href="https://www.jianshu.com/p/d028355054d7" rel="noopener external nofollow noreferrer" target="_blank">Mac&#x4E0B;&#x5B89;&#x88C5;&#x548C;&#x914D;&#x7F6E;mongoDB</a><br><a href="https://blog.csdn.net/dashen180309/article/details/81138730" rel="noopener external nofollow noreferrer" target="_blank">MongoDB&#x542F;&#x52A8;&#x5F02;&#x5E38; &#x62A5;&#x9519; &#x53CA; &#x6B63;&#x786E;&#x7684;&#x5173;&#x95ED;&#x65B9;&#x6CD5;</a></p>
+<h4 id="&#x53C2;&#x8003;&#x8D44;&#x6E90;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#x8D44;&#x6E90;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#x8D44;&#x6E90;&#xFF1A;"></a>&#x53C2;&#x8003;&#x8D44;&#x6E90;&#xFF1A;</h4><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9tb25nb2RiL21vbmdvZGItb3N4LWluc3RhbGwuaHRtbA==">&#x83DC;&#x9E1F;&#x6559;&#x7A0B;: Mac OSX &#x5E73;&#x53F0;&#x5B89;&#x88C5; MongoDB<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC8yZDBhMWVjZDBjODI=">mac&#x4E0B;mongodb&#x7684;&#x5B89;&#x88C5;&#x548C;&#x4F7F;&#x7528;(&#x4F7F;&#x7528;&#x7EC8;&#x7AEF;&#x64CD;&#x4F5C;)<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9zZWdtZW50ZmF1bHQuY29tL2EvMTE5MDAwMDAwMjU0NzIyOQ==">Mac&#x4E0B;&#x5B89;&#x88C5;MongoDB &#x53CA;&#x4F7F;&#x7528;&#x6559;&#x7A0B;<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9kMDI4MzU1MDU0ZDc=">Mac&#x4E0B;&#x5B89;&#x88C5;&#x548C;&#x914D;&#x7F6E;mongoDB<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Rhc2hlbjE4MDMwOS9hcnRpY2xlL2RldGFpbHMvODExMzg3MzA=">MongoDB&#x542F;&#x52A8;&#x5F02;&#x5E38; &#x62A5;&#x9519; &#x53CA; &#x6B63;&#x786E;&#x7684;&#x5173;&#x95ED;&#x65B9;&#x6CD5;<i class="fa fa-external-link-alt"></i></span></p>
 
     </div>
 
@@ -420,7 +424,7 @@
   </nav>
 </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -473,6 +477,9 @@
     </footer>
     
     <!--aplayer start-->
+    <div class="umaru umaru-down">
+      <img src="/images/umaru.png" title="" style="">
+    </div>
     <div class="aplayer no-destroy" 
     data-id="5014450505" 
     data-server="netease" 

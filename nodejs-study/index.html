@@ -9,6 +9,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="google-site-verification" content="Wj0fqSdbmDZBLXzt2hZoN7xab5X_LgtX2eSMvzIqxRI">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -18,10 +20,12 @@
     <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/photoswipe.min.css' rel='stylesheet'/>
     <link href='https://cdn.jsdelivr.net/npm/photoswipe/dist/default-skin/default-skin.min.css' rel='stylesheet'/>
     <script src='https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js'></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"ftzzloo.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":250,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"ftzzloo.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","width":260,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="&amp;#x2003;&amp;#x2003;&amp;#x8BF7;&amp;#x539F;&amp;#x8C05;&amp;#x6807;&amp;#x9898;&amp;#xFF0C;&amp;#x672C;&amp;#x6765;&amp;#x60F3;&amp;#x5199;&amp;#x4ECE;&amp;#x5165;&amp;#x95E8;&amp;#x5230;&amp;#x5927;&amp;#x5E08;&amp;#xFF0C;&amp;#x4F46;&amp;#x662F;&amp;#x4E0D;&amp;#x591F;&amp;#x81EA;&amp;#x4FE1;">
@@ -222,7 +226,7 @@
 <h3 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h3><p>&#x672C;&#x6587;&#x9002;&#x5408;&#x6709;JavaScript&#x57FA;&#x7840;&#x7684;&#x7AE5;&#x978B;&#xFF0C;&#x672A;&#x6EE1;18&#x5C81;&#x8BF7;&#x2026;&#x5199;&#x9519;&#xFF0C;&#x672A;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x8005;&#x8BF7;&#x5728;&#x8001;&#x5E08;&#x966A;&#x540C;&#x4E0B;&#x89C2;&#x770B;</p>
 <p>&#x73AF;&#x5883;<br>macOS</p>
 <h3 id="&#x4ECB;&#x7ECD;"><a href="#&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</h3><p>Node.js&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x642D;&#x5EFA;&#x57FA;&#x4E8E;Chrome V8&#x5F15;&#x64CE;&#x7684;JavaScript&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;&#x4E0D;&#x662F;&#x8BED;&#x8A00;&#x4E5F;&#x4E0D;&#x662F;js&#x6846;&#x67B6;&#x3002;</p>
-<p>&#x53BB;<a href="https://nodejs.org/en/" rel="noopener external nofollow noreferrer" target="_blank">Node.js&#x5B98;&#x7F51;</a>&#x4E0B;&#x8F7D;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#x67E5;&#x770B;</p>
+<p>&#x53BB;<span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2VuLw==">Node.js&#x5B98;&#x7F51;<i class="fa fa-external-link-alt"></i></span>&#x4E0B;&#x8F7D;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#x67E5;&#x770B;</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> node -v</span></span><br><span class="line">v10.14.1</span><br></pre></td></tr></table></figure>
 
 <p>&#x8FD0;&#x884C;node&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5F00;&#x542F;console&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x4E5F;&#x53EB;&#x505A;<code>REPL&#x73AF;&#x5883;</code></p>
@@ -245,8 +249,8 @@
 <p>&#x63A5;&#x7740;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF0C;&#x542F;&#x52A8;web&#x670D;&#x52A1;&#x5668;</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> node http.js</span></span><br><span class="line">http://localhost:8080</span><br></pre></td></tr></table></figure>
 
-<p>&#x8BBF;&#x95EE; <a href="http://localhost:8080" rel="noopener external nofollow noreferrer" target="_blank">http://localhost:8080</a> &#x53EF;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5BA2;&#x6237;&#x7AEF;&#x5F97;&#x5230;&#x54CD;&#x5E94;&#x6570;&#x636E; &#x201C;insert straw here&#x201D;</p>
-<p><a href="https://nodejs.org/en/" rel="noopener external nofollow noreferrer" target="_blank">Node.js&#x5B98;&#x7F51;</a></p>
+<p>&#x8BBF;&#x95EE; <span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDo4MDgw">http://localhost:8080<i class="fa fa-external-link-alt"></i></span> &#x53EF;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5BA2;&#x6237;&#x7AEF;&#x5F97;&#x5230;&#x54CD;&#x5E94;&#x6570;&#x636E; &#x201C;insert straw here&#x201D;</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2VuLw==">Node.js&#x5B98;&#x7F51;<i class="fa fa-external-link-alt"></i></span></p>
 <!-- flag of hidden posts -->
     </div>
 
@@ -361,7 +365,7 @@
   </nav>
 </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -414,6 +418,9 @@
     </footer>
     
     <!--aplayer start-->
+    <div class="umaru umaru-down">
+      <img src="/images/umaru.png" title="" style="">
+    </div>
     <div class="aplayer no-destroy" 
     data-id="5014450505" 
     data-server="netease" 

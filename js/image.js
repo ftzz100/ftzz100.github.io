@@ -503,7 +503,7 @@ window.onload = function(){
         
 
        
-    },8000)
+    },5000)
 
     // setTimeout(function(){
     //     var switcher = document.querySelector(".aplayer-miniswitcher");
@@ -530,4 +530,29 @@ window.onload = function(){
     //         audio: data
     //     });
     // //});
+
+    setTimeout(function(){
+        var xiaomai = document.getElementsByClassName("umaru")[0];
+        var player = document.querySelector(".no-destroy .aplayer-body");
+        var playerLrc = document.querySelector(".no-destroy .aplayer-lrc");
+        xiaomai.onclick = function(){
+            var style = window.getComputedStyle(xiaomai, null);
+            //console.log( style.bottom )
+            if( style.bottom == "1px"){
+                this.style.bottom = "67px";
+                this.setAttribute("class","umaru umaru-up");
+                player.style.maxHeight = "66px";
+                playerLrc.style.maxHeight = "66px";
+
+            }else if(style.bottom == "67px"){
+                this.style.bottom = "1px";
+                player.style.maxHeight = "0px";
+                playerLrc.style.maxHeight = "0px";
+            }
+            //
+            //
+
+        }
+    },1000)
+
 }
