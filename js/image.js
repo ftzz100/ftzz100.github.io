@@ -530,29 +530,75 @@ window.onload = function(){
     //         audio: data
     //     });
     // //});
-
+    //document.body.addEventListener("touchstart", function(){ });
     setTimeout(function(){
-        var xiaomai = document.getElementsByClassName("umaru")[0];
+        
+        var umaru = document.getElementsByClassName("umaru")[0];
+        var umaruImg = document.querySelector(".umaru img");
         var player = document.querySelector(".no-destroy .aplayer-body");
         var playerLrc = document.querySelector(".no-destroy .aplayer-lrc");
-        xiaomai.onclick = function(){
-            var style = window.getComputedStyle(xiaomai, null);
+        umaruImg.addEventListener("click",function(){
+            var style = window.getComputedStyle(umaru, null);
             //console.log( style.bottom )
+            
             if( style.bottom == "1px"){
-                this.style.bottom = "67px";
-                this.setAttribute("class","umaru umaru-up");
+                umaru.style.bottom = "67px";
+                umaru.setAttribute("class","umaru umaru-up");
                 player.style.maxHeight = "66px";
                 playerLrc.style.maxHeight = "66px";
 
             }else if(style.bottom == "67px"){
-                this.style.bottom = "1px";
+                umaru.style.bottom = "1px";
                 player.style.maxHeight = "0px";
                 playerLrc.style.maxHeight = "0px";
             }
-            //
-            //
+        },false);
+        umaru.addEventListener("mouseover",function(){
+            //;
+            if(this.classList.contains('umaru-up')){
+                this.classList.add("umaru-up-on");
+            }else{
+                this.classList.add("umaru-down-on");
+            }
+            
+        },false);
 
-        }
+        umaru.addEventListener("mouseout",function(){
+            //classList.contains('myCssClass');
+            if(this.classList.contains('umaru-up-on')){
+                this.classList.remove("umaru-up-on");
+            }else{
+                this.classList.remove("umaru-down-on");
+            }
+            
+        },false);
+
+
+        //mobile
+        
+        umaru.addEventListener("touchstart",function(){
+            //console.log("123")
+            //classList.contains('myCssClass');
+            if(this.classList.contains('umaru-up')){
+                this.classList.add("umaru-up-on");
+            }else{
+                this.classList.add("umaru-down-on");
+            }
+        },false);
+        umaru.addEventListener("touchmove",function(){
+            //console.log("456")
+            //this.classList.add("umaru-down-on");
+            
+        },false);
+        umaru.addEventListener("touchend",function(){
+            //console.log("789")
+            if(this.classList.contains('umaru-up-on')){
+                this.classList.remove("umaru-up-on");
+            }else{
+                this.classList.remove("umaru-down-on");
+            }
+        },false);
+        
     },1000)
 
 }

@@ -1190,7 +1190,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4b7db5;
+  background: #ff2e61;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2791,8 +2791,11 @@ body {
   border-radius: 15px;
 }
 code {
-  background: #fefac7;
-  color: #e67474;
+  _background: #fefac7;
+  _color: #e67474;
+  background: #f8f8f8;
+  color: #bf616a;
+  padding: 0.25em 0.5em;
 }
 .post-body p a {
   color: #0593d3;
@@ -2969,10 +2972,6 @@ code {
   .post-block {
     margin-top: initial !important;
     padding: 8px 8px 8px !important;
-  }
-  .posts-expand .post-title,
-  .posts-expand .post-meta {
-    text-align: left;
   }
   .aplayer {
     margin: 5px 0px 5px !important;
@@ -3169,32 +3168,25 @@ center.img-alt b {
 .umaru:hover {
   transform: scale(1.06);
 }
-.umaru-down:hover:before {
-  content: '';
+.umaru-down:before,
+.umaru-up:before {
   display: block;
   position: absolute;
   width: 146px;
   height: 100%;
-  _left: 137px;
-  _top: -40px;
-  left: 153px;
-  top: -45px;
-  background: url("/images/music3.png") no-repeat 0 100%;
-  background-size: 146px;
+  left: 160px;
+  top: -50px;
   z-index: 1;
-  cursor: pointer;
 }
-.umaru-up:hover:before {
+.umaru-down-on:before {
   content: '';
-  display: block;
-  position: absolute;
-  width: 146px;
-  height: 100%;
-  left: 153px;
-  top: -45px;
-  background: url("/images/music7.png") no-repeat 0 100%;
+  background: url("/images/hanashi_down.png") no-repeat 0 100%;
   background-size: 146px;
-  z-index: 1;
+}
+.umaru-up-on:before {
+  content: '';
+  background: url("/images/hanashi_up.png") no-repeat 0 100%;
+  background-size: 146px;
 }
 .umaru img {
   width: 35%;
@@ -3205,4 +3197,23 @@ center.img-alt b {
 .no-destroy .aplayer-lrc {
   max-height: 0px;
   transition: all 0.5s ease;
+}
+.posts-expand .post-title,
+.posts-expand .post-meta {
+  text-align: left;
+}
+.posts-expand .post-title,
+.posts-expand .post-meta {
+  text-align: left;
+}
+.posts-expand .post-title {
+  font-size: 1.5em;
+}
+.posts-expand .post-meta {
+  margin: 3px 0 35px 0;
+}
+.posts-expand .post-meta .post-meta-item time {
+  color: #bf616a;
+  _border-bottom: 0px;
+  cursor: default;
 }
